@@ -20,7 +20,7 @@ defmodule LaPotiniere.MixProject do
   def application do
     [
       mod: {LaPotiniere.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :comeonin, :bamboo, :arc_ecto]
     ]
   end
 
@@ -42,7 +42,18 @@ defmodule LaPotiniere.MixProject do
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"}
+      {:plug_cowboy, "~> 2.0"},
+      {:redix, "~> 0.9.0"},
+      {:phoenix_slime, github: "slime-lang/phoenix_slime"},
+      {:comeonin, "~> 4.1.2"},
+      {:bcrypt_elixir, "~> 1.1.1"},
+      {:bamboo, "~> 1.1.0"},
+      {:bamboo_smtp, "~> 1.6.0"},
+      {:random_bytes, "~> 1.0.1"},
+      {:canary, github: "cpjk/canary"},
+      {:arc_ecto, "~> 0.11.1"},
+      {:arc, "~> 0.11.0"},
+      {:blankable, "~> 1.0.0"},
     ]
   end
 

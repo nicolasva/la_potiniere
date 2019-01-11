@@ -52,7 +52,7 @@ config :la_potiniere, LaPotiniereWeb.Endpoint,
       ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
       ~r{priv/gettext/.*(po)$},
       ~r{lib/la_potiniere_web/views/.*(ex)$},
-      ~r{lib/la_potiniere_web/templates/.*(eex)$}
+      ~r{lib/la_potiniere_web/templates/.*(eex|slim|slime)$}
     ]
   ]
 
@@ -68,8 +68,8 @@ config :phoenix, :plug_init_mode, :runtime
 
 # Configure your database
 config :la_potiniere, LaPotiniere.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: "phoenix",
+  password: "infonies",
   database: "la_potiniere_dev",
   hostname: "localhost",
   pool_size: 10
