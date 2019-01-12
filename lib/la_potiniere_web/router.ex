@@ -19,7 +19,7 @@ defmodule LaPotiniereWeb.Router do
     get "/", PageController, :index
   end
 
-  scope "/admin", AdminPotiniereWeb  do
+  scope "/admin", LaPotiniereWeb.AdminPotiniereWeb  do
     pipe_through :browser
 
     get "/", PageController, :index

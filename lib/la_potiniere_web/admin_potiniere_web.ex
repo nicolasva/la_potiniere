@@ -1,4 +1,4 @@
-defmodule AdminPotiniereWeb do
+defmodule LaPotiniereWeb.AdminPotiniereWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, views, channels and so on.
@@ -19,7 +19,7 @@ defmodule AdminPotiniereWeb do
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: AdminPotiniereWeb
+      use Phoenix.Controller, namespace: LaPotiniereWeb.AdminPotiniereWeb
 
       import Plug.Conn
       import LaPotiniereWeb.Gettext
@@ -30,8 +30,8 @@ defmodule AdminPotiniereWeb do
   def view do
     quote do
       use Phoenix.View,
-        root: "lib/admin_potiniere_web/templates",
-        namespace: AdminPotiniereWeb
+        root: "lib/la_potiniere_web/admin_potiniere_web/templates",
+        namespace: LaPotiniereWeb.AdminPotiniereWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller, only: [get_flash: 1, get_flash: 2, view_module: 1]
