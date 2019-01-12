@@ -1,0 +1,28 @@
+doctype html
+html lang="en"
+  head
+    meta charset="utf-8"
+    meta content="IE=edge" http-equiv="X-UA-Compatible"
+    meta content="width=device-width, initial-scale=1" name="viewport"
+    meta content="" name="description"
+    meta content="" name="author"
+    title La Potinière
+    link rel="stylesheet" href="#{Routes.static_path(@conn, "/css/app.css")}"
+    link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+  body
+    header
+      section.container
+        nav role="navigation"
+          ul
+            li
+              = link "Get Started", to: "https://hexdocs.pm/phoenix/overview.html"
+        = link to: "http://phoenixframework.org/", class: "phx-logo" do
+          = img_tag(Routes.static_path(@conn, "/images/phoenix.png"), alt: "Phoenix Framework Logo")
+    main.container role="main"
+      p.alert.alert-info role="alert"
+        = get_flash(@conn, :info)
+      p.alert.alert-danger role="alert"
+        = get_flash(@conn, :error)
+      = render @view_module, @view_template, assigns
+
+    script src="#{Routes.static_path(@conn, "/js/app.js")}"
