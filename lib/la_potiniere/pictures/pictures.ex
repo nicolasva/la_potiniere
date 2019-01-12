@@ -68,7 +68,7 @@ defmodule LaPotiniere.Pictures do
 
   """
   def update_picture(%Picture{} = picture, attrs) do
-    menu
+    picture
     |> Picture.changeset(attrs)
     |> Repo.update()
   end
