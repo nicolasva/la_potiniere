@@ -1,6 +1,6 @@
 defmodule LaPotiniere.Menus do
   @moduledoc """
-  The Accounts context.
+  The Menus context.
   """
 
   import Ecto.Query, warn: false

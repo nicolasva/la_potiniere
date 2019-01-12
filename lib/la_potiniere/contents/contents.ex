@@ -1,0 +1,104 @@
+defmodule LaPotiniere.Contents do
+  @moduledoc """
+  The Contents context.
+  """
+
+  import Ecto.Query, warn: false
+  alias LaPotiniere.Repo
+
+  alias LaPotiniere.Contents.Content
+
+  @doc """
+  Returns the list of contents.
+
+  ## Examples
+
+      iex> list_contents()
+      [%Content{}, ...]
+
+  """
+  def list_contents do
+    Repo.all(Content)
+  end
+
+  @doc """
+  Gets a single Content.
+
+  Raises `Ecto.NoResultsError` if the Content does not exist.
+
+  ## Examples
+
+      iex> get_content!(123)
+      %User{}
+
+      iex> get_content!(456)
+      ** (Ecto.NoResultsError)
+
+  """
+  def get_content!(id), do: Repo.get!(Content, id)
+
+  @doc """
+  Creates a Content.
+
+  ## Examples
+
+      iex> create_content(%{field: value})
+      {:ok, %content{}}
+
+      iex> create_content(%{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def create_content(attrs \\ %{}) do
+    %Content{}
+    |> Content.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  @doc """
+  Updates a content.
+
+  ## Examples
+
+      iex> update_content(content, %{field: new_value})
+      {:ok, %Content{}}
+
+      iex> update_content(content, %{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def update_content(%Content{} = content, attrs) do
+    content
+    |> Content.changeset(attrs)
+    |> Repo.update()
+  end
+
+  @doc """
+  Deletes a Content.
+
+  ## Examples
+
+      iex> delete_content(content)
+      {:ok, %Content{}}
+
+      iex> delete_content(content)
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def delete_user(%Content{} = content) do
+    Repo.delete(content)
+  end
+
+  @doc """
+  Returns an `%Ecto.Changeset{}` for tracking user changes.
+
+  ## Examples
+
+      iex> change_content(content)
+      %Ecto.Changeset{source: %Content{}}
+
+  """
+  def change_user(%Content{} = content) do
+    Content.changeset(content, %{})
+  end
+end

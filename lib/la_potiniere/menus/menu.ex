@@ -4,6 +4,7 @@ defmodule LaPotiniere.Menus.Menu do
 
   schema "menus" do
     field :title, :string
+    has_many :contents, LaPotiniere.Contents.Content, on_delete: :delete_all
     timestamps()
   end
 
