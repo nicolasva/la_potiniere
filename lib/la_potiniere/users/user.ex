@@ -9,7 +9,9 @@ defmodule LaPotiniere.Users.User do
     field :password, :string, virtual: true
     field :confirmation_password, :string, virtual: true
     field :encrypted_password, :string, virtual: true
-    has_many :contents, LaPotiniere.Contents.Content
+    field :email, :string
+    has_many :menus, LaPotiniere.Menus.Menu
+    has_one :location, LaPotiniere.Locations.Location
   end
 
   @doc false

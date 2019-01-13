@@ -9,7 +9,7 @@ defmodule LaPotiniere.Menus do
   alias LaPotiniere.Menus.Menu
 
   @doc """
-  Returns the list of users.
+  Returns the list of menus.
 
   ## Examples
 
