@@ -39,7 +39,7 @@ defmodule LaPotiniereWeb.AdminPotiniereWeb do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      import LaPotiniereWeb.AdminPotiniereWeb.ErrorHelpers
+      import LaPotiniereWeb.ErrorHelpers
       import LaPotiniereWeb.Gettext
       alias LaPotiniereWeb.Router.Helpers, as: Routes
     end

@@ -15,3 +15,5 @@ table.table
           = user.username
         td
           = user.email
+
+= link "Nouvelle utilisateur", to: Routes.admin_user_path(@conn, :new), class: "btn btn-primary btn-xs"

@@ -9,4 +9,9 @@ defmodule LaPotiniereWeb.AdminPotiniereWeb.UserController do
     render(conn, "index.html", users: users)
   end
 
+  def new(conn, _params) do
+    changeset = Users.change_user(%User{})
+    render(conn, "new.html", changeset: changeset)
+  end
+
 end

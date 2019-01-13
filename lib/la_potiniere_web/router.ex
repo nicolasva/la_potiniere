@@ -19,11 +19,11 @@ defmodule LaPotiniereWeb.Router do
     get "/", PageController, :index
   end
 
-  scope "/admin", LaPotiniereWeb.AdminPotiniereWeb  do
+  scope "/admin", LaPotiniereWeb.AdminPotiniereWeb, as: :admin  do
     pipe_through :browser
 
     get "/", PageController, :index
-    resources "/users", UserController, only: [:index]
+    resources "/users", UserController, only: [:index, :edit, :new, :create, :update, :delete]
   end
 
   # Other scopes may use custom stacks.

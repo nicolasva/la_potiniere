@@ -18,7 +18,7 @@ defmodule LaPotiniere.Users.User do
 
   def changeset(model, params \\ :invalid) do
     model
-    |> cast(params, ~w(name username email address cp_postal city country), [])
+    |> cast(params, ~w(name username email), [])
     |> validate_email_format()
     |> validate_required([:name, :username, :email])
     |> validate_length(:username, min: 1, max: 20)
