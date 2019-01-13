@@ -1,0 +1,17 @@
+h2 Listing User
+
+table.table
+  thead
+    tr
+      th Nom
+      th Identifiant
+      th Email
+  tbody
+    = for user <- @users do
+      tr
+        td
+          = user.name
+        td
+          = user.username
+        td
+          = user.email
