@@ -13,37 +13,37 @@ defmodule LaPotiniere.Menus do
 
   ## Examples
 
-      iex> list_users()
+      iex> list_menus()
       [%User{}, ...]
 
   """
-  def list_users do
+  def list_menus do
     Repo.all(Menu)
   end
 
   @doc """
-  Gets a single user.
+  Gets a single menu.
 
-  Raises `Ecto.NoResultsError` if the User does not exist.
+  Raises `Ecto.NoResultsError` if the Menu does not exist.
 
   ## Examples
 
-      iex> get_user!(123)
-      %User{}
+      iex> get_menu!(123)
+      %Menu{}
 
-      iex> get_user!(456)
+      iex> get_menu!(456)
       ** (Ecto.NoResultsError)
 
   """
-  def get_user!(id), do: Repo.get!(Menu, id)
+  def get_menu!(id), do: Repo.get!(Menu, id)
 
   @doc """
-  Creates a user.
+  Creates a menu.
 
   ## Examples
 
       iex> create_menu(%{field: value})
-      {:ok, %User{}}
+      {:ok, %Menu{}}
 
       iex> create_menu(%{field: bad_value})
       {:error, %Ecto.Changeset{}}

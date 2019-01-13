@@ -68,7 +68,7 @@ defmodule LaPotiniere.Users do
 
   """
   def update_menu(%User{} = user, attrs) do
-    menu
+    user
     |> User.changeset(attrs)
     |> Repo.update()
   end
