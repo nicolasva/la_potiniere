@@ -1,3 +1,4 @@
 h2 Nouvelle utilisateur
+= render "form.html", changeset: @changeset, action: Routes.admin_user_path(@conn, :create)
 
-
+= link "Retour", to: Routes.admin_user_path(@conn, :index)

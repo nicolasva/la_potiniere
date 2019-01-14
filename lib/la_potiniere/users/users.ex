@@ -52,7 +52,8 @@ defmodule LaPotiniere.Users do
   def create_user(attrs \\ %{}) do
     %User{}
     |> User.changeset(attrs)
-    |> User.insert()
+    |> User.changeset_password(attrs)
+    |> Repo.insert()
   end
 
   @doc """
