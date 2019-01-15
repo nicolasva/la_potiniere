@@ -6,6 +6,8 @@ table.table
       th Nom
       th Identifiant
       th Email
+      th Edition
+      th Supression
   tbody
     = for user <- @users do
       tr
@@ -15,5 +17,8 @@ table.table
           = user.username
         td
           = user.email
+        td
+          = link "Editer", to: Routes.admin_user_path(@conn, :edit, user), class: "btn btn-default btn-xs"
+
 
 = link "Nouvelle utilisateur", to: Routes.admin_user_path(@conn, :new), class: "btn btn-primary btn-xs"

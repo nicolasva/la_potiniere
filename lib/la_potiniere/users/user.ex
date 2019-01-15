@@ -21,10 +21,8 @@ defmodule LaPotiniere.Users.User do
     user
     |> cast(attrs, ~w(name username email))
     |> validate_email_format()
-    #|> validate_length(:password, min: 6, max: 100)
     |> validate_required([:name, :username, :email])
     |> validate_length(:username, min: 1, max: 20)
-    #|> put_encrypted_password()
   end
 
   def changeset_password(user, attrs) do
