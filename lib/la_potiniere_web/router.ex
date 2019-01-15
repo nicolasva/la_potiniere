@@ -17,6 +17,7 @@ defmodule LaPotiniereWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    resources "/auth_sessions", AuthSessionController, only: [:new, :create, :delete]
   end
 
   scope "/admin", LaPotiniereWeb.AdminPotiniereWeb, as: :admin  do

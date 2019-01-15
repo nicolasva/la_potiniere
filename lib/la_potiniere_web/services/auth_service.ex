@@ -1,4 +1,4 @@
-defmodule IpapyWeb.Service.AuthService do
+defmodule LaPotiniereWeb.Service.AuthService do
   import Plug.Conn
 
   import Comeonin.Bcrypt, only: [checkpw: 2, dummy_checkpw: 0]
@@ -9,7 +9,7 @@ defmodule IpapyWeb.Service.AuthService do
 
   def call(conn, repo) do
     user_id = get_session(conn, :user_id)
-    user = user_id && repo.get(IpapyWeb.User, user_id)
+    user = user_id && repo.get(LaPotiniere.Users.User, user_id)
     assign(conn, :current_user, user)
   end
 
@@ -41,12 +41,12 @@ defmodule IpapyWeb.Service.AuthService do
 
   def register_new_password(conn, password, current_user, opts) do
     repo = Keyword.fetch!(opts, :repo)
-    user = IpapyWeb.Repo.get(IpapyWeb.User, current_user.id)
+    user = LaPotiniere.Repo.get(LaPotiniere.Users.User, current_user.id)
     encrypted_password = Comeonin.Bcrypt.hashpwsalt(password)
-    user_update = IpapyWeb.User.changeset(user, %{encrypted_password: encrypted_password})
-    user_update = IpapyWeb.Repo.update user_update
+    user_update = LaPotiniere.Users.User.changeset(user, %{encrypted_password: encrypted_password})
+    user_update = LaPotiniere.Repo.update user_update
     if user_update do
-      user = repo.get_by(IpapyWeb.User, encrypted_password: encrypted_password)
+      user = repo.get_by(LaPotiniere.Users.User, encrypted_password: encrypted_password)
       assign(conn, :current_user, user)
       {:ok, conn}
     else
@@ -56,7 +56,7 @@ defmodule IpapyWeb.Service.AuthService do
 
   def login_by_username_and_pass(conn, username, given_pass, opts) do
     repo = Keyword.fetch!(opts, :repo)
-    user = repo.get_by(IpapyWeb.User, username: username)
+    user = repo.get_by(LaPotiniere.Users.User, username: username)
 
     cond do
       user && checkpw(given_pass, user.encrypted_password) ->
@@ -70,13 +70,13 @@ defmodule IpapyWeb.Service.AuthService do
   end
 
   def send_mail(conn, user, password) do
-    IpapyWeb.Email.send_new_password_temporary_html(user.email, password) |> IpapyWeb.Mailer.deliver_now
+    LaPotiniereWeb.Email.send_new_password_temporary_html(user.email, password) |> LaPotiniereWeb.Mailer.deliver_now
     conn
   end
 
   def losing_password(conn, email, opts) do
     repo = Keyword.fetch!(opts, :repo)
-    user = repo.get_by(IpapyWeb.User, email: email)
+    user = repo.get_by(LaPotiniere.Users.User, email: email)
 
     cond do
       user ->
@@ -89,10 +89,10 @@ defmodule IpapyWeb.Service.AuthService do
   def init_password(conn, user, opts) do
     password = RandomBytes.base16(4)
     encrypted_password = Comeonin.Bcrypt.hashpwsalt(password)
-    user_update = IpapyWeb.User.changeset(user, %{encrypted_password: encrypted_password})
-    user_update = IpapyWeb.Repo.update user_update
+    user_update = LaPotiniere.Users.User.changeset(user, %{encrypted_password: encrypted_password})
+    user_update = LaPotiniere.Repo.update user_update
     repo = Keyword.fetch!(opts, :repo)
-    user = repo.get_by(IpapyWeb.User, email: user.email)
+    user = repo.get_by(LaPotiniere.Users.User, email: user.email)
     send_mail(conn, user, password)
   end
 

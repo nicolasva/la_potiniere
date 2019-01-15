@@ -18,6 +18,11 @@ html lang="en"
               = link "Get Started", to: "https://hexdocs.pm/phoenix/overview.html"
         = link to: "http://phoenixframework.org/", class: "phx-logo" do
           = img_tag(Routes.static_path(@conn, "/images/phoenix.png"), alt: "Phoenix Framework Logo")
+      nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+        div.collapse.navbar-collapse#navbarSupportedContent
+          ul.navbar-nav.mr-auto
+            li.nav-item
+              = link "Utilisateur", to: Routes.admin_user_path(@conn, :index), class: "nav-link"
     main.container role="main"
       p.alert.alert-info role="alert"
         = get_flash(@conn, :info)
