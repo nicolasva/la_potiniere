@@ -18,7 +18,9 @@ table.table
         td
           = user.email
         td
-          = link "Editer", to: Routes.admin_user_path(@conn, :edit, user), class: "btn btn-default btn-xs"
+          = link "Editer", to: Routes.admin_user_path(@conn, :edit, user), class: "btn btn-info"
+        td
+          = link "Supprimer", to: Routes.admin_user_path(@conn, :delete, user), method: :delete, data: [confirm: "Etes vous sur de vouloir supprimer cette utilisateur ?"], class: "btn btn-primary"
 
 
-= link "Nouvelle utilisateur", to: Routes.admin_user_path(@conn, :new), class: "btn btn-primary btn-xs"
+= link "Nouvelle utilisateur", to: Routes.admin_user_path(@conn, :new), class: "btn btn-success btn-xs"

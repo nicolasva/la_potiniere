@@ -68,9 +68,10 @@ defmodule LaPotiniere.Users do
       {:error, %Ecto.Changeset{}}
 
   """
-  def update_menu(%User{} = user, attrs) do
+  def update_user(%User{} = user, attrs) do
     user
     |> User.changeset(attrs)
+    |> User.changeset_password(attrs)
     |> Repo.update()
   end
 
