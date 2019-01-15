@@ -1,16 +1,16 @@
-defmodule LaPotiniereWeb.AdminPotiniereWeb.AuthSessionController do
-  use LaPotiniereWeb.AdminPotiniereWeb, :controller
+defmodule LaPotiniereWeb.AuthSessionController do
+  use LaPotiniereWeb, :controller
 
   def new(conn, _) do
     render(conn, "new.html")
   end
 
   def create(conn, %{"auth_session" => %{"username" => user, "password" => pass}}) do
-    case IpapyWeb.Service.AuthService.login_by_username_and_pass(conn, user, pass, repo: Repo) do
+    case LaPotiniereWeb.Service.AuthService.login_by_username_and_pass(conn, user, pass, repo: Repo) do
       {:ok, conn} ->
         conn
         |> put_flash(:info, "Welcome back !")
-        |> redirect(to: page_path(conn, :index))
+        |> redirect(to: Routes.page_path(conn, :index))
       {:error, _reason, conn} ->
         conn
         |> put_flash(:error, "Invalid username|password combination")
@@ -20,7 +20,7 @@ defmodule LaPotiniereWeb.AdminPotiniereWeb.AuthSessionController do
 
   def delete(conn, _) do
     conn
-    |> IpapyWeb.Service.AuthService.logout()
-    |> redirect(to: page_path(conn, :index))
+    |> LaPotiniereWeb.Service.AuthService.logout()
+    |> redirect(to: Routes.page_path(conn, :index))
   end
 end

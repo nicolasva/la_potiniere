@@ -1,3 +1,3 @@
 defmodule LaPotiniereWeb.AuthSessionView do
-  use LaPotiniereWeb.Web, :view
+  use LaPotiniereWeb, :view
 end
