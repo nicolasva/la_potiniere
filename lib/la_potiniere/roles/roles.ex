@@ -101,4 +101,15 @@ defmodule LaPotiniere.Roles do
   def change_user(%Role{} = role) do
     Role.changeset(role, %{})
   end
+
+  def is_admin?(roles) do
+    result = for role <- roles do
+       if role.role_value == 0 do
+         true
+       else
+         false
+       end
+    end
+    Enum.member?(result, false)
+  end
 end

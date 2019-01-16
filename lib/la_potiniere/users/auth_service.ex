@@ -56,7 +56,7 @@ defmodule LaPotiniere.AuthService do
 
   def login_by_username_and_pass(conn, username, given_pass, opts) do
     repo = Keyword.fetch!(opts, :repo)
-    user = LaPotiniere.Repo.get_by(LaPotiniere.Users.User, username: username)
+    user = LaPotiniere.Repo.get_by(LaPotiniere.Users.User, username: username) |> LaPotiniere.Repo.preload(:roles)
 
     cond do
       user && checkpw(given_pass, user.encrypted_password) ->

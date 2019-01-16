@@ -8,7 +8,7 @@ defmodule LaPotiniereWeb.AdminPotiniereWeb.PageController do
   end
 
   defp authenticate(conn, _opts) do
-    if conn.assigns.current_user do
+    if conn.assigns.current_user && LaPotiniere.Roles.is_admin?(LaPotiniere.Repo.preload(conn.assigns.current_user, :roles).roles) do
       conn
     else
       conn
