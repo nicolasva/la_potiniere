@@ -6,7 +6,7 @@ defmodule LaPotiniereWeb.AuthSessionController do
   end
 
   def create(conn, %{"auth_session" => %{"username" => user, "password" => pass}}) do
-    case LaPotiniereWeb.Service.AuthService.login_by_username_and_pass(conn, user, pass, repo: Repo) do
+    case LaPotiniere.AuthService.login_by_username_and_pass(conn, user, pass, repo: Repo) do
       {:ok, conn} ->
         conn
         |> put_flash(:info, "Welcome back !")
@@ -20,7 +20,7 @@ defmodule LaPotiniereWeb.AuthSessionController do
 
   def delete(conn, _) do
     conn
-    |> LaPotiniereWeb.Service.AuthService.logout()
+    |> LaPotiniere.AuthService.logout()
     |> redirect(to: Routes.page_path(conn, :index))
   end
 end
