@@ -31,6 +31,7 @@ defmodule LaPotiniere.Users.User do
     |> cast(attrs, ~w(password))
     |> validate_length(:password, min: 6, max: 100)
     |> put_encrypted_password()
+    |> user_to_role()
   end
 
   def changeset_forgetting_mdp(model, params) do
@@ -68,4 +69,26 @@ defmodule LaPotiniere.Users.User do
         changeset
     end
   end
+
+  #defp assoc_roles_users(conn, role, user_id) do
+    #  IO.inspect "user_id -=-=-=-=-=-=-=-=-=--#{user_id}"
+    #roles = Enum.at(role, 0)
+    #user = IpapyWeb.Repo.get!(IpapyWeb.User, user_id)
+    #user = IpapyWeb.Repo.preload(user, :roles)
+    #roles = :maps.filter fn _, v -> v != "false" end, roles["roles"]
+    #roles = Map.keys(roles)
+    #array_roles = Enum.map(roles, fn(x) -> IpapyWeb.Repo.preload(IpapyWeb.Repo.get(IpapyWeb.Role, x), :users) end)
+    #changeset = Ecto.Changeset.change(user) |> Ecto.Changeset.put_assoc(:roles, array_roles)
+    #if IpapyWeb.Repo.update!(changeset) do
+      #  {:ok, conn}
+      #else
+        #  {:error, :error_roles_users, conn}
+        #end
+        #end
+  defp user_to_role(user) do
+    user
+    |> Ecto.Changeset.change() 
+    |> Ecto.Changeset.put_assoc(:roles, [LaPotiniere.Repo.get_by(LaPotiniere.Roles.Role, role_value: 0)])
+  end
+
 end

@@ -101,6 +101,7 @@ defmodule LaPotiniere.Users do
 
   """
   def change_user(%User{} = user) do
-    User.changeset(user, %{})
+    user
+    |> User.changeset(%{})
   end
 end
