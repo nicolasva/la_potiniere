@@ -17,7 +17,7 @@ table.table
         td
           = menu.title
         td
-          = "#{menu.name} #{menu.username}<#{menu.user.email}>"
+          = "#{menu.user.name} #{menu.user.username}<#{menu.user.email}>"
         td
           = link "Editer", to: Routes.admin_menu_path(@conn, :edit, menu), class: "btn btn-info"
         td

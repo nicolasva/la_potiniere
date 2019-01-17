@@ -49,8 +49,8 @@ defmodule LaPotiniere.Menus do
       {:error, %Ecto.Changeset{}}
 
   """
-  def create_menu(attrs \\ %{}) do
-    %Menu{}
+  def create_menu(attrs \\ %{}, current_user) do
+    %Menu{user_id: current_user.id}
     |> Menu.changeset(attrs)
     |> Repo.insert()
   end
@@ -98,7 +98,7 @@ defmodule LaPotiniere.Menus do
       %Ecto.Changeset{source: %Menu{}}
 
   """
-  def change_user(%Menu{} = menu) do
-    Menu.changeset(menu, %{})
+  def change_menu(%Menu{} = menu, current_user) do
+    Menu.changeset(menu, %{user_id: current_user.id})
   end
 end

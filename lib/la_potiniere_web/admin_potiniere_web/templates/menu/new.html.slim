@@ -1,0 +1,5 @@
+h2 Nouveau menu
+
+= render "form.html", changeset: @changeset, action: Routes.admin_menu_path(@conn, :create)
+
+= link "Retour", to: Routes.admin_menu_path(@conn, :index)

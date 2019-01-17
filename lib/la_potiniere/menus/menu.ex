@@ -13,7 +13,7 @@ defmodule LaPotiniere.Menus.Menu do
 
   def changeset(menu, attrs) do
     menu
-    |> cast(attrs, [:title])
+    |> cast(attrs, [:title, :user_id])
     |> validate_required([:title])
   end
 end
