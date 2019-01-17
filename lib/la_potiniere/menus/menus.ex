@@ -85,7 +85,7 @@ defmodule LaPotiniere.Menus do
       {:error, %Ecto.Changeset{}}
 
   """
-  def delete_user(%Menu{} = menu) do
+  def delete_menu(%Menu{} = menu) do
     Repo.delete(menu)
   end
 

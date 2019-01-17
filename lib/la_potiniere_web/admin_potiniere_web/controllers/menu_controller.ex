@@ -47,6 +47,15 @@ defmodule LaPotiniereWeb.AdminPotiniereWeb.MenuController do
     end
   end
 
+  def delete(conn, %{"id" => id}) do
+    menu = Menus.get_menu!(id)
+    {:ok, _menu} = Menus.delete_menu(menu)
+
+    conn
+    |> put_flash(:info, "Ce menu a bien été supprimé.")
+    |> redirect(to: Routes.admin_menu_path(conn, :index))
+  end
+
   defp authenticate(conn, _opts) do
     if conn.assigns.current_user && LaPotiniere.Roles.is_admin?(LaPotiniere.Repo.preload(conn.assigns.current_user, :roles).roles) do
       conn
