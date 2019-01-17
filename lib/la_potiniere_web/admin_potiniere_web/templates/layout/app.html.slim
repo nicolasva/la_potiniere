@@ -23,6 +23,8 @@ html lang="en"
           ul.navbar-nav.mr-auto
             li.nav-item
               = link "Utilisateur", to: Routes.admin_user_path(@conn, :index), class: "nav-link"
+            li.nav-item
+              = link "Menu", to: Routes.admin_menu_path(@conn, :index), class: "nav-link"
     main.container role="main"
       p.alert.alert-info role="alert"
         = get_flash(@conn, :info)

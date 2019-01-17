@@ -26,6 +26,7 @@ defmodule LaPotiniereWeb.Router do
 
     get "/", PageController, :index
     resources "/users", UserController, only: [:index, :edit, :new, :create, :update, :delete]
+    resources "/menus", MenuController, only: [:index, :edit, :new, :create, :update, :delete]
   end
 
   # Other scopes may use custom stacks.

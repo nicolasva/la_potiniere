@@ -18,7 +18,7 @@ defmodule LaPotiniere.Menus do
 
   """
   def list_menus do
-    Repo.all(Menu)
+    Repo.all(Menu) |> Repo.preload(:user)
   end
 
   @doc """

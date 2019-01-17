@@ -4,6 +4,8 @@ defmodule LaPotiniereWeb.AdminPotiniereWeb.UserController do
   alias LaPotiniere.Users
   alias LaPotiniere.Users.User
 
+  plug :authenticate when action in [:index, :new, :create, :edit, :update, :delete]
+
   def index(conn, _params) do
     users = Users.list_users()
     render(conn, "index.html", users: users)
@@ -51,5 +53,16 @@ defmodule LaPotiniereWeb.AdminPotiniereWeb.UserController do
     conn
     |> put_flash(:info, "L'utilisateur a bien été supprimé")
     |> redirect(to: Routes.admin_user_path(conn, :index))
+  end
+
+  defp authenticate(conn, _opts) do
+    if conn.assigns.current_user && LaPotiniere.Roles.is_admin?(LaPotiniere.Repo.preload(conn.assigns.current_user, :roles).roles) do
+      conn
+    else
+      conn
+      |> put_flash(:error, "You must be logged in to access that page")
+      |> redirect(to: Routes.page_path(conn, :index))
+      |> halt()
+    end
   end
 end

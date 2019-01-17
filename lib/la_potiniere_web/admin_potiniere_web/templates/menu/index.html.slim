@@ -1,0 +1,26 @@
+h1 Les des menus
+
+table.table
+  thead
+    tr
+      th
+        = "Titre du menu"
+      th
+        = "Menu crée par"
+      th
+        = "Edition"
+      th
+        = "Supression"
+  tbody
+    = for menu <- @menus do
+      tr
+        td
+          = menu.title
+        td
+          = "#{menu.name} #{menu.username}<#{menu.user.email}>"
+        td
+          = link "Editer", to: Routes.admin_menu_path(@conn, :edit, menu), class: "btn btn-info"
+        td
+          = link "Supprimer", to: Routes.admin_menu_path(@conn, :delete, menu), method: :delete, data: [confirm: "Etes-vous sur de vouloir supprimer ce menu ?"], class: "btn btn-primary"
+
+= link "Nouveau Menu", to: Routes.admin_menu_path(@conn, :new), class: "btn btn-success btn-xs"
