@@ -110,6 +110,6 @@ defmodule LaPotiniere.Roles do
          false
        end
     end
-    Enum.member?(result, false)
+    Enum.member?(result, true)
   end
 end
