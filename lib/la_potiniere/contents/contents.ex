@@ -52,8 +52,8 @@ defmodule LaPotiniere.Contents do
       {:error, %Ecto.Changeset{}}
 
   """
-  def create_content(attrs \\ %{}) do
-    %Content{}
+  def create_content(attrs \\ %{}, menu_id) do
+    %Content{menu_id: menu_id}
     |> Content.changeset(attrs)
     |> Repo.insert()
   end

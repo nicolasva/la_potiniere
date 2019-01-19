@@ -3,8 +3,8 @@
     .alert.alert-danger
       p Oops, something went wrong! Please check the errors below.
   .form-group
-    = label f, :content, class: "control-label"
-    = textarea f, :content, placeholder: "Contenu", class: "form-control"
-    = error_tag f, :content
+    = label f, :comment, class: "control-label"
+    = textarea f, :comment, placeholder: "Commentaire", class: "form-control"
+    = error_tag f, :comment
   .form-group
     = submit "Valider", class: "btn btn-primary"

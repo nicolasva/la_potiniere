@@ -18,13 +18,13 @@ defmodule LaPotiniereWeb.AdminPotiniereWeb.ContentController do
   end
 
   def create(conn, %{"content" => content_params, "menu_id" => menu_id}) do
-    case Contents.create_content(content_params, conn.assigns.current_user) do
+    case Contents.create_content(content_params, String.to_integer(menu_id)) do
       {:ok, content} ->
         conn
         |> put_flash(:info, "Ce contenu a bien été crée.")
-        |> redirect(to: Routes.admin_menu_path(conn, :index))
+        |> redirect(to: Routes.admin_menu_content_path(conn, :index, menu_id))
       {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "new.html", changeset: changeset)
+        render(conn, "new.html", changeset: changeset, menu_id: menu_id)
     end
   end
 

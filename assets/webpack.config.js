@@ -1,10 +1,16 @@
 const path = require('path');
+const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = (env, options) => ({
+  plugins: {
+    coffeescript: {
+      bare: true
+    }
+  },
   optimization: {
     minimizer: [
       new UglifyJsPlugin({
@@ -22,6 +28,13 @@ module.exports = (env, options) => ({
   },
   module: {
     rules: [{
+        test: /\.coffee$/,
+        use: {
+          loader: 'coffee-loader',
+          options: { sourceMap: true }
+        }
+      },
+      {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
@@ -75,6 +88,10 @@ module.exports = (env, options) => ({
     new CopyWebpackPlugin([{
       from: 'static/',
       to: '../'
-    }])
+    }]),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery'
+    }),
   ]
 });

@@ -10,7 +10,7 @@ table.table
     = for content <- @contents do
       tr
         td
-          = "#{String.slice(content.content, 0..20)} etc..."
+          = "#{String.slice(content.comment, 0..20)} etc..."
         td
           = link "Editer", to: Routes.admin_menu_content_path(@conn, :edit, @menu, content), class: "btn btn-info"
         td
