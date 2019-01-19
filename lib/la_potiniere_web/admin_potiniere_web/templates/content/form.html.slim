@@ -1,0 +1,10 @@
+= form_for @changeset, @action, fn f ->
+  = if @changeset.action do
+    .alert.alert-danger
+      p Oops, something went wrong! Please check the errors below.
+  .form-group
+    = label f, :content, class: "control-label"
+    = textarea f, :content, placeholder: "Contenu", class: "form-control"
+    = error_tag f, :content
+  .form-group
+    = submit "Valider", class: "btn btn-primary"

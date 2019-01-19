@@ -15,3 +15,5 @@ table.table
           = link "Editer", to: Routes.admin_menu_content_path(@conn, :edit, @menu, content), class: "btn btn-info"
         td
           = link "Supprimer", to: Routes.admin_menu_content_path(@conn, :delete, @menu, content), method: :delete, data: [confirm: "Etes-vous sur de vouloir supprimer ce contenu ?"], class: "btn btn-primary"
+
+= link "Nouveau contenu", to: Routes.admin_menu_content_path(@conn, :new, @menu), class: "btn btn-success btn-xs"

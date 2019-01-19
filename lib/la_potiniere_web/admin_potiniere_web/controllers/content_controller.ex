@@ -13,8 +13,8 @@ defmodule LaPotiniereWeb.AdminPotiniereWeb.ContentController do
   end
 
   def new(conn, %{"menu_id" => menu_id}) do
-    changeset = Contents.change_content(%Content{}, conn.assigns.current_user)
-    render(conn, "new.html", changeset: changeset)
+    changeset = Contents.change_content(%Content{}, menu_id)
+    render(conn, "new.html", changeset: changeset, menu_id: menu_id)
   end
 
   def create(conn, %{"content" => content_params, "menu_id" => menu_id}) do

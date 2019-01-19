@@ -101,7 +101,7 @@ defmodule LaPotiniere.Contents do
       %Ecto.Changeset{source: %Content{}}
 
   """
-  def change_user(%Content{} = content) do
-    Content.changeset(content, %{})
+  def change_content(%Content{} = content, menu_id) do
+    Content.changeset(content, %{menu_id: menu_id})
   end
 end
