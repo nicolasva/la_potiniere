@@ -17,8 +17,11 @@ defmodule LaPotiniere.Contents do
       [%Content{}, ...]
 
   """
-  def list_contents do
-    Repo.all(Content)
+  def list_contents(menu) do
+    menu_contents = 
+      menu
+      |> Repo.preload(:contents)
+    menu_contents.contents
   end
 
   @doc """

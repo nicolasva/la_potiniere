@@ -1,4 +1,4 @@
-h1 Les des menus
+h2 Liste des menus
 
 table.table
   thead
@@ -7,6 +7,7 @@ table.table
         = "Titre du menu"
       th
         = "Menu crée par"
+      th Liste des contenus
       th
         = "Edition"
       th
@@ -18,6 +19,8 @@ table.table
           = menu.title
         td
           = "#{menu.user.name} #{menu.user.username}<#{menu.user.email}>"
+        td
+          = link "Les contenus", to: Routes.admin_menu_content_path(@conn, :index, menu), class: "btn btn-info"
         td
           = link "Editer", to: Routes.admin_menu_path(@conn, :edit, menu), class: "btn btn-info"
         td

@@ -1,0 +1,17 @@
+h2 liste des contenus
+
+table.table
+  thead
+    tr
+      th Les contenus
+      th Edition
+      th Supresion
+  tbody
+    = for content <- @contents do
+      tr
+        td
+          = "#{String.slice(content.content, 0..20)} etc..."
+        td
+          = link "Editer", to: Routes.admin_menu_content_path(@conn, :edit, @menu, content), class: "btn btn-info"
+        td
+          = link "Supprimer", to: Routes.admin_menu_content_path(@conn, :delete, @menu, content), method: :delete, data: [confirm: "Etes-vous sur de vouloir supprimer ce contenu ?"], class: "btn btn-primary"

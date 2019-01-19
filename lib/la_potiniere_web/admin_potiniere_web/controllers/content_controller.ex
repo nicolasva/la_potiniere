@@ -7,8 +7,9 @@ defmodule LaPotiniereWeb.AdminPotiniereWeb.ContentController do
   plug :authenticate when action in [:index, :new, :create, :edit, :update, :delete]
 
   def index(conn, %{"menu_id" => menu_id}) do
-    contents = Contents.list_contents()
-    render(conn, "index.html", contents: contents)
+    menu = LaPotiniere.Menus.get_menu!(menu_id)
+    contents = Contents.list_contents(menu)
+    render(conn, "index.html", contents: contents, menu: menu)
   end
 
   def new(conn, %{"menu_id" => menu_id}) do
@@ -48,8 +49,8 @@ defmodule LaPotiniereWeb.AdminPotiniereWeb.ContentController do
   end
 
   def delete(conn, %{"menu_id" => menu_id, "id" => id}) do
-    content = Contents.get_menu!(id)
-    {:ok, _content} = Contents.delete_menu(menu)
+    content = Contents.get_content!(id)
+    {:ok, _content} = Contents.delete_content(content)
 
     conn
     |> put_flash(:info, "Ce contenu a bien été supprimé.")
