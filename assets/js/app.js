@@ -13,7 +13,6 @@ import css from "../css/app.scss"
 import 'jquery';
 import "phoenix_html"
 import "../node_modules/ckeditor/ckeditor.js"
-//import "./vendors/jquery-3.3.1.min.js"
 import "./admin/contents/form.js.coffee"
 
 // Import local files
