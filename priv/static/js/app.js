@@ -101,7 +101,7 @@ eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./css/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("/* WEBPACK VAR INJECTION */(function($) {$(document).ready(function() {\n  //console.log(\"nicolas\")\n  return CKEDITOR.replace('content_comment', {\n    filebrowserUploadUrl: '/uploader/upload.php'\n  });\n});\n\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\")))\n\n//# sourceURL=webpack:///./js/admin/contents/form.js.coffee?");
+eval("/* WEBPACK VAR INJECTION */(function($) {$(document).ready(function() {\n  //console.log(\"nicolas\")\n  return CKEDITOR.replace('content_comment', {\n    filebrowserUploadUrl: '/admin/ckeditorfiles'\n  });\n});\n\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\")))\n\n//# sourceURL=webpack:///./js/admin/contents/form.js.coffee?");
 
 /***/ }),
 

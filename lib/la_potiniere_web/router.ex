@@ -29,7 +29,7 @@ defmodule LaPotiniereWeb.Router do
     resources "/menus", MenuController, only: [:index, :edit, :new, :create, :update, :delete] do
       resources "/contents", ContentController, only: [:index, :edit, :new, :create, :update, :delete]
     end
-    resources "/ckeditorfiles", CkeditorFilesController, only: [:create]
+    resources "/ckeditorfiles", CkeditorFileController, only: [:create]
   end
 
   # Other scopes may use custom stacks.
