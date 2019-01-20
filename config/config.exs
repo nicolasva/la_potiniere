@@ -11,6 +11,17 @@ use Mix.Config
 config :la_potiniere,
   ecto_repos: [LaPotiniere.Repo]
 
+config :la_potiniere, LaPotiniereWeb.Mailer,
+  adapter: Bamboo.SMTPAdapter,
+  server: "smtp.gmail.com",
+  port: 465,
+  username: "nicolas.vandenbogaerde@gmail.com",
+  password: "nic0lasva",
+  ssl: true,
+  retries: 1
+
+config :arc,
+  storage: Arc.Storage.Local
 
 # Configures the endpoint
 config :la_potiniere, LaPotiniereWeb.Endpoint,
