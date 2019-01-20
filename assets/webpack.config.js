@@ -26,11 +26,11 @@ module.exports = (env, options) => ({
     filename: 'app.js',
     path: path.resolve(__dirname, '../priv/static/js')
   },
-  entry: './js/vendors/ckeditor/ckeditor.js',
-  output: {
-    filename: 'ckeditor.js',
-    path: path.resolve(__dirname, '../priv/static/js/ckeditor')
-  },
+  //entry: './js/vendors/ckeditor/ckeditor.js',
+  //output: {
+  //  filename: 'ckeditor.js',
+  //  path: path.resolve(__dirname, '../priv/static/js/ckeditor')
+  //},
   module: {
     rules: [{
         test: /\.coffee$/,
