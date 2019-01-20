@@ -10,9 +10,9 @@ import css from "../css/app.scss"
 // Import dependencies
 //
 //
+//import "../node_modules/ckeditor/ckeditor.js"
 import 'jquery';
 import "phoenix_html"
-import "../node_modules/ckeditor/ckeditor.js"
 import "./admin/contents/form.js.coffee"
 
 // Import local files
