@@ -26,11 +26,11 @@ module.exports = (env, options) => ({
     filename: 'app.js',
     path: path.resolve(__dirname, '../priv/static/js')
   },
-  //entry: './js/vendors/ckeditor/ckeditor.js',
-  //output: {
-  //  filename: 'ckeditor.js',
-  //  path: path.resolve(__dirname, '../priv/static/js/ckeditor')
-  //},
+  /*entry: './js/vendors/jquery/jquery-3.3.1.min.js',
+  output: {
+    filename: 'jquery-3.3.1.min.js',
+    path: path.resolve(__dirname, '../priv/static/js/vendors/jquery')
+  },*/
   module: {
     rules: [{
         test: /\.coffee$/,
@@ -94,9 +94,9 @@ module.exports = (env, options) => ({
       from: 'static/',
       to: '../'
     }]),
-    new webpack.ProvidePlugin({
+    /*new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery'
-    }),
+    }),*/
   ]
 });

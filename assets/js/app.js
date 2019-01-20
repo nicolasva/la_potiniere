@@ -11,7 +11,7 @@ import css from "../css/app.scss"
 //
 //
 //import "../node_modules/ckeditor/ckeditor.js"
-import 'jquery';
+//import 'jquery';
 import "phoenix_html"
 import "./admin/contents/form.js.coffee"
 

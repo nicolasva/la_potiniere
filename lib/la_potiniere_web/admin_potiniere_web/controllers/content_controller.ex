@@ -3,7 +3,6 @@ defmodule LaPotiniereWeb.AdminPotiniereWeb.ContentController do
   
   alias LaPotiniere.Contents
   alias LaPotiniere.Contents.Content
-
   plug :authenticate when action in [:index, :new, :create, :edit, :update, :delete]
 
   def index(conn, %{"menu_id" => menu_id}) do
