@@ -2,7 +2,11 @@
   = if @changeset.action do
     .alert.alert-danger
       p Oops, something went wrong! Please check the errors below.
-  .form-group.comment data-action=Plug.CSRFProtection.get_csrf_token()
+  .form-group
+    = label f, :reference, class: "control-label"
+    = text_input f, :reference, placeholder: "Reference", class: "form-control"
+    = error_tag f, :reference
+  .form-group.comment
     = label f, :comment, class: "control-label"
     = textarea f, :comment, placeholder: "Commentaire", class: "form-control"
     = error_tag f, :comment

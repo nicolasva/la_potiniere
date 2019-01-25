@@ -3,14 +3,14 @@ h2 liste des contenus
 table.table
   thead
     tr
-      th Les contenus
+      th Reference
       th Edition
       th Supresion
   tbody
     = for content <- @contents do
       tr
         td
-          = "#{String.slice(content.comment, 0..20)} etc..."
+          = content.reference
         td
           = link "Editer", to: Routes.admin_menu_content_path(@conn, :edit, @menu, content), class: "btn btn-info"
         td

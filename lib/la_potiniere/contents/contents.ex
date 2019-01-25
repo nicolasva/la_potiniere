@@ -88,7 +88,7 @@ defmodule LaPotiniere.Contents do
       {:error, %Ecto.Changeset{}}
 
   """
-  def delete_user(%Content{} = content) do
+  def delete_content(%Content{} = content) do
     Repo.delete(content)
   end
 

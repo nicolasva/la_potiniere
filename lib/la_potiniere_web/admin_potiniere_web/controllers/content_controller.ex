@@ -30,7 +30,7 @@ defmodule LaPotiniereWeb.AdminPotiniereWeb.ContentController do
   def edit(conn, %{"menu_id" => menu_id, "id" => id}) do
     content = Contents.get_content!(id)
     changeset = Contents.change_content(content, conn.assigns.current_user)
-    render(conn, "edit.html", content: content, changeset: changeset)
+    render(conn, "edit.html", content: content, changeset: changeset, menu_id: menu_id)
 
   end
 
@@ -41,9 +41,9 @@ defmodule LaPotiniereWeb.AdminPotiniereWeb.ContentController do
       {:ok, content} ->
         conn
         |> put_flash(:info, "Le contenu a bien été mise à jour.")
-        |> redirect(to: Routes.admin_menu_path(conn, :index))
+        |> redirect(to: Routes.admin_menu_content_path(conn, :index, menu_id))
       {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "edit.html", content: content, changeset: changeset)
+        render(conn, "edit.html", content: content, changeset: changeset, menu_id: menu_id)
     end
   end
 
@@ -53,7 +53,7 @@ defmodule LaPotiniereWeb.AdminPotiniereWeb.ContentController do
 
     conn
     |> put_flash(:info, "Ce contenu a bien été supprimé.")
-    |> redirect(to: Routes.admin_menu_path(conn, :index))
+    |> redirect(to: Routes.admin_menu_content_path(conn, :index, menu_id))
   end
 
   defp authenticate(conn, _opts) do
