@@ -20,7 +20,10 @@ table.table
         td
           = "#{menu.user.name} #{menu.user.username}<#{menu.user.email}>"
         td
-          = link "Les contenus", to: Routes.admin_menu_content_path(@conn, :index, menu), class: "btn btn-info"
+          = if menu.picture? == false do
+            = link "Les contenus", to: Routes.admin_menu_content_path(@conn, :index, menu), class: "btn btn-info"
+          - else
+            = link "Les photos", to: Routes.admin_menu_content_path(@conn, :index, menu), class: "btn btn-info"
         td
           = link "Editer", to: Routes.admin_menu_path(@conn, :edit, menu), class: "btn btn-info"
         td

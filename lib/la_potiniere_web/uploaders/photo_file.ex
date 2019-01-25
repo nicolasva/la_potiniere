@@ -1,4 +1,4 @@
-defmodule LaPotiniere.CkeditorFile do
+defmodule LaPotiniere.PhotoFile do
   use Arc.Definition
 
   # Include ecto support (requires package arc_ecto installed):
@@ -24,25 +24,22 @@ defmodule LaPotiniere.CkeditorFile do
   # Define a thumbnail transformation:
   def transform(:thumb, _) do
     {:convert, "-strip -thumbnail 100x100^ -gravity center -extent 100x100 -format png", :png}
-  end
+  # end
 
   # Override the persisted filenames:
   # def filename(version, _) do
   #   version
   # end
 
-  def storage_dir(version, {file, scope}) do
-    "uploads/ckeditor/files/#{version}"
-  end
   # Override the storage directory:
-  # def storage_dir(version, {file, scope}) do
-  #   "uploads/user/avatars/#{scope.id}"
-  # end
+  def storage_dir(version, {file, scope}) do
+    "uploads/photos/photo_file/#{version}"
+  end
 
   # Provide a default URL if there hasn't been a file uploaded
   def default_url(version, scope) do
-    "uploads/ckeditor/default_#{version}.png"
-  end
+    "uploads/photos/photo_file/default_#{version}.png"
+  # end
 
   # Specify custom headers for s3 objects
   # Available options are [:cache_control, :content_disposition,
