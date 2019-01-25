@@ -5,6 +5,7 @@ defmodule LaPotiniere.Photos.Photo do
   schema "photos" do
     field :title, :string
     field :legend, :string
+    field :photo_file, LaPotiniere.PhotoFile.Type
     belongs_to :menu, LaPotiniere.Menus.Menu
     timestamps()
   end
@@ -12,7 +13,8 @@ defmodule LaPotiniere.Photos.Photo do
   @doc false
   def changeset(photo, attrs) do
     photo
-    |> cast(attrs, [:comment, :reference])
-    |> validate_required([:comment, :reference])
+    |> cast(attrs, [:title, :legend, :photo_file])
+    |> cast_attachments(attrs, [:photo_file])
+    |> validate_required([:photo_file])
   end
 end

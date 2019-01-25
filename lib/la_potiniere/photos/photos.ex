@@ -17,8 +17,11 @@ defmodule LaPotiniere.Photos do
       [%Photo{}, ...]
 
   """
-  def list_photos do
-    Repo.all(Photo)
+  def list_photos(menu) do
+    menu_photos = 
+      menu
+      |> Repo.preload(:photos)
+    menu_photos.photos
   end
 
   @doc """
