@@ -38,7 +38,7 @@ defmodule LaPotiniereWeb.Router do
   scope "/ckeditor", LaPotiniereWeb.AdminPotiniereWeb, as: :ckeditor  do
     #pipe_through [:browser, :csrf]
     pipe_through [:browser]
-    resources "/ckeditorfiles", CkeditorFileController, only: [:create]
+    resources "/ckeditorfiles", CkeditorFileController, only: [:create, :index]
   end
 
   # Other scopes may use custom stacks.
