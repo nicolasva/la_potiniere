@@ -24,7 +24,7 @@ defmodule LaPotiniere.PhotoFile do
   # Define a thumbnail transformation:
   def transform(:thumb, _) do
     {:convert, "-strip -thumbnail 100x100^ -gravity center -extent 100x100 -format png", :png}
-  # end
+  end
 
   # Override the persisted filenames:
   # def filename(version, _) do
@@ -39,7 +39,7 @@ defmodule LaPotiniere.PhotoFile do
   # Provide a default URL if there hasn't been a file uploaded
   def default_url(version, scope) do
     "uploads/photos/photo_file/default_#{version}.png"
-  # end
+  end
 
   # Specify custom headers for s3 objects
   # Available options are [:cache_control, :content_disposition,

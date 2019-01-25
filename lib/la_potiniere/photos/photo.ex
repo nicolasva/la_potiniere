@@ -1,5 +1,6 @@
 defmodule LaPotiniere.Photos.Photo do
   use Ecto.Schema
+  use Arc.Ecto.Schema
   import Ecto.Changeset
 
   schema "photos" do

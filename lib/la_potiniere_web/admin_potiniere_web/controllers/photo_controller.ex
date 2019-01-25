@@ -9,7 +9,7 @@ defmodule LaPotiniereWeb.AdminPotiniereWeb.PhotoController do
   def index(conn, %{"menu_id" => menu_id}) do
     menu = LaPotiniere.Menus.get_menu!(menu_id)
     photos = Photos.list_photos(menu)
-    render(conn, "index.html", menus: menus)
+    render(conn, "index.html", menu: menu, photos: photos)
   end
 
   def new(conn, %{"menu_id" => menu_id}) do

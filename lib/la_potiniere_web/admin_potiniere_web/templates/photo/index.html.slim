@@ -1,0 +1,26 @@
+h2 Liste des photos
+
+table.table
+  thead
+    tr
+      th Titre
+      th photo
+      th legend
+      th Edition
+      th Supression
+  tbody
+    = for photo <- @photos do
+      tr
+        td
+          = photo.title
+        td
+          = "photo"
+        td
+          = photo.legend
+        td
+          = link "Editer", to: Routes.admin_menu_photo_path(@conn, :edit, @menu, photo), class: "btn btn-info"
+        td
+          = link "Supprimer", to: Routes.admin_menu_photo_path(@conn, :delete, @menu, photo), method: :delete, data: [confirm: "Etes-vous sur de vouloir supprimer cette photo ?"], class: "btn btn-primary"
+
+
+= link "Nouvelle photo", to: Routes.admin_menu_photo_path(@conn, :new, @menu), class: "btn btn-success btn-xs"
