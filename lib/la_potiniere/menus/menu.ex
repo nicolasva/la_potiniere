@@ -4,6 +4,7 @@ defmodule LaPotiniere.Menus.Menu do
 
   schema "menus" do
     field :title, :string
+    field :picture?, :boolean
     has_many :contents, LaPotiniere.Contents.Content, on_delete: :delete_all
     belongs_to :user, LaPotiniere.Users.User
     timestamps()
@@ -13,7 +14,7 @@ defmodule LaPotiniere.Menus.Menu do
 
   def changeset(menu, attrs) do
     menu
-    |> cast(attrs, [:title, :user_id])
+    |> cast(attrs, [:title, :user_id, :picture?])
     |> validate_required([:title])
   end
 end
