@@ -52,8 +52,8 @@ defmodule LaPotiniere.Photos do
       {:error, %Ecto.Changeset{}}
 
   """
-  def create_photo(attrs \\ %{}) do
-    %Photo{}
+  def create_photo(attrs \\ %{}, menu_id) do
+    %Photo{menu_id: menu_id}
     |> Photo.changeset(attrs)
     |> Repo.insert()
   end
@@ -101,7 +101,7 @@ defmodule LaPotiniere.Photos do
       %Ecto.Changeset{source: %Photo{}}
 
   """
-  def change_photo(%Photo{} = photo) do
-    Photo.changeset(photo, %{})
+  def change_photo(%Photo{} = photo, menu_id) do
+    Photo.changeset(photo, %{menu_id: menu_id})
   end
 end

@@ -1,0 +1,5 @@
+h2 Nouvelle photo
+
+= render "form.html", changeset: @changeset, action: Routes.admin_menu_photo_path(@conn, :create, @menu_id) 
+
+= link "Retour", to: Routes.admin_menu_photo_path(@conn, :index, @menu_id)

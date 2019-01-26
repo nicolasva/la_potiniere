@@ -13,8 +13,8 @@ defmodule LaPotiniereWeb.AdminPotiniereWeb.PhotoController do
   end
 
   def new(conn, %{"menu_id" => menu_id}) do
-    changeset = Photos.change_menu(%Photo{}, menu_id)
-    render(conn, "new.html", changeset: changeset)
+    changeset = Photos.change_photo(%Photo{}, menu_id)
+    render(conn, "new.html", changeset: changeset, menu_id: menu_id)
   end
 
   def create(conn, %{"menu_id" => menu_id, "photo" => photo_params}) do

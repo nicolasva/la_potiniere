@@ -14,7 +14,7 @@ table.table
         td
           = photo.title
         td
-          = "photo"
+          = img_tag(LaPotiniere.PhotoFile.url({photo.photo_file.file_name, photo}, :thumb))
         td
           = photo.legend
         td
