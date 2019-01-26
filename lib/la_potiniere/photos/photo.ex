@@ -14,7 +14,7 @@ defmodule LaPotiniere.Photos.Photo do
   @doc false
   def changeset(photo, attrs) do
     photo
-    |> cast(attrs, [:title, :legend, :photo_file])
+    |> cast(attrs, [:title, :legend, :photo_file, :menu_id])
     |> cast_attachments(attrs, [:photo_file])
     |> validate_required([:photo_file])
   end

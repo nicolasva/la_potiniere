@@ -30,8 +30,8 @@ defmodule LaPotiniereWeb.AdminPotiniereWeb.PhotoController do
 
   def edit(conn, %{"menu_id" => menu_id, "id" => id}) do
     photo = Photos.get_photo!(id)
-    changeset = Photos.change_menu(photo)
-    render(conn, "edit.html", photo: photo, changeset: changeset)
+    changeset = Photos.change_photo(photo, menu_id)
+    render(conn, "edit.html", photo: photo, changeset: changeset, menu_id: menu_id)
   end
 
   def update(conn, %{"menu_id" => menu_id, "id" => id, "photo" => photo_params}) do
@@ -47,13 +47,13 @@ defmodule LaPotiniereWeb.AdminPotiniereWeb.PhotoController do
     end
   end
 
-  def delete(conn, %{"id" => id}) do
+  def delete(conn, %{"menu_id" => menu_id, "id" => id}) do
     photo = Photos.get_photo!(id)
     {:ok, _menu} = Photos.delete_photo(photo)
 
     conn
     |> put_flash(:info, "Cette photo a bien été supprimé.")
-    |> redirect(to: Routes.admin_menu_photo_path(conn, :index))
+    |> redirect(to: Routes.admin_menu_photo_path(conn, :index, menu_id))
   end
 
   defp authenticate(conn, _opts) do

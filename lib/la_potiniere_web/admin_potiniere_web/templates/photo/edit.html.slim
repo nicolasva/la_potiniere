@@ -1,0 +1,5 @@
+h2 Editer une photo
+
+= render "form.html", changeset: @changeset, action: Routes.admin_menu_photo_path(@conn, :update, @menu_id, @photo) 
+
+= link "Retour", to: Routes.admin_menu_photo_path(@conn, :index, @menu_id)
