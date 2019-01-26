@@ -4,7 +4,8 @@
       p Oops, something went wrong! Please check the errors below.
   .form-group
     = label f, :picture?, class: "control-label"
-    = checkbox f, :picture?
+    //= checkbox f, :picture?
+    = select f, :picture?, LaPotiniere.Menus.Menu.array_picture?
     = error_tag f, :picture?
   .form-group
     = label f, :title, class: "control-label"
