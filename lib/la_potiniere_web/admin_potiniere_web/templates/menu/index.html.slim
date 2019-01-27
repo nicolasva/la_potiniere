@@ -25,7 +25,7 @@ table.table
           = if menu.picture? == 1 do
             = link "Les photos", to: Routes.admin_menu_photo_path(@conn, :index, menu), class: "btn btn-info"
           = if menu.picture? == 2 do
-            = link "Les évènements", to: Routes.admin_menu_photo_path(@conn, :index, menu), class: "btn btn-info"
+            = link "Les évènements", to: Routes.admin_menu_event_path(@conn, :index, menu), class: "btn btn-info"
         td
           = link "Editer", to: Routes.admin_menu_path(@conn, :edit, menu), class: "btn btn-info"
         td

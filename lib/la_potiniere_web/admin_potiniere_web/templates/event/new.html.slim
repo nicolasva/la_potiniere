@@ -1,0 +1,5 @@
+h2 Nouvel évènement
+
+= render "form.html", changeset: @changeset, action: Routes.admin_menu_event_path(@conn, :create, @menu_id)
+
+= link "Retour", to: Routes.admin_menu_event_path(@conn, :index, @menu_id)

@@ -1,4 +1,4 @@
-defmodule LaPotiniere.Comments.Commentt do
+defmodule LaPotiniere.Comments.Comment do
   use Ecto.Schema
   import Ecto.Changeset
 

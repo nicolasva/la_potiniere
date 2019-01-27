@@ -1,0 +1,19 @@
+h2 Liste des événements
+
+table.table
+  thead
+    tr
+      th Titre
+      th Edition
+      th Supression
+  tbody
+    = for event <- @events do
+      tr
+        td
+          = event.title
+        td
+          = link "Editer", to: Routes.admin_menu_event_path(@conn, :edit, @menu, event), class: "btn btn-info"
+        td
+          = link "Supprimer", to: Routes.admin_menu_event_path(@conn, :delete, @menu, event), method: :delete, data: [confirm: "Etes-vous sur de vouloir supprimer cet évènement ?"], class: "btn btn-primary"
+
+= link "Nouveau Evènement", to: Routes.admin_menu_event_path(@conn, :new, @menu), class: "btn btn-success btn-xs"

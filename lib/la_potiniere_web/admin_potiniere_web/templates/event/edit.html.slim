@@ -1,0 +1,5 @@
+h2 Editer ce contenu
+
+= render "form.html", changeset: @changeset, action: Routes.admin_menu_event_path(@conn, :update, @menu_id, @event)
+
+= link "Retour", to: Routes.admin_menu_content_path(@conn, :index, @menu_id)

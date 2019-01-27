@@ -6,6 +6,7 @@ defmodule LaPotiniere.Events.Event do
     field :title, :string
     field :comment, :string
     belongs_to :menu, LaPotiniere.Menus.Menu
+    timestamps()
   end
 
   @doc false
