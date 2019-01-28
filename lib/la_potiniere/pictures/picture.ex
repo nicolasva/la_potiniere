@@ -5,6 +5,7 @@ defmodule LaPotiniere.Pictures.Picture do
   schema "pictures" do
     field :title
     belongs_to :content, LaPotiniere.Contents.Content
+    has_many :masters, {"contents_pictures", Master}, foreign_key: :assoc_id
     timestamps()
   end
 
