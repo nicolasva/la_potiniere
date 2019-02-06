@@ -11,8 +11,8 @@ config :logger, level: :warn
 
 # Configure your database
 config :la_potiniere, LaPotiniere.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: "phoenix",
+  password: "infonies",
   database: "la_potiniere_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox

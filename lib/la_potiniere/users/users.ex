@@ -18,7 +18,7 @@ defmodule LaPotiniere.Users do
 
   """
   def list_users do
-    Repo.all(User)
+    Repo.all(User) |> Repo.preload(:roles)
   end
 
   @doc """
@@ -35,7 +35,7 @@ defmodule LaPotiniere.Users do
       ** (Ecto.NoResultsError)
 
   """
-  def get_user!(id), do: Repo.get!(User, id)
+  def get_user!(id), do: Repo.get!(User, id) |> Repo.preload(:roles)
 
   @doc """
   Creates a user.

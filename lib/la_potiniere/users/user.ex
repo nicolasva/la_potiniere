@@ -11,7 +11,7 @@ defmodule LaPotiniere.Users.User do
     field :encrypted_password, :string
     field :email, :string
     many_to_many :roles, LaPotiniere.Roles.Role, join_through: "roles_users", on_replace: :delete
-    has_many :menus, LaPotiniere.Menus.Menu
+    #has_many :menus, LaPotiniere.Menus.Menu, on_delete: :nothing
     has_one :location, LaPotiniere.Locations.Location, on_delete: :delete_all
     timestamps()
   end
