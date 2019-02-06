@@ -1,7 +1,7 @@
 $(document).ready ->
   #console.log("nicolas")
-  if ("#content_comment").length > 0
-    CKEDITOR.replace('content_comment',
+  if ("#ckeditor_text").length > 0
+    CKEDITOR.replace('ckeditor_text',
       extraPlugins: 'imagebrowser',
       imageBrowser_listUrl: '/ckeditor/ckeditorfiles',
       #filebrowserBrowseUrl: '/ckeditor/ckeditorfiles',

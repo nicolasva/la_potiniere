@@ -8,7 +8,7 @@
     = error_tag f, :title
   .form-group.comment
     = label f, :comment, class: "control-label"
-    = textarea f, :comment, placeholder: "Commentaire", class: "form-control"
+    = textarea f, :comment, placeholder: "Commentaire", class: "form-control", id: "ckeditor_text"
     = error_tag f, :comment
   .form-group
     = submit "Valider", class: "btn btn-primary"
