@@ -70,6 +70,7 @@ defmodule LaPotiniere.Users do
   """
   def update_user(%User{} = user, attrs) do
     user
+    |> Repo.preload(:roles)
     |> User.changeset(attrs)
     |> User.changeset_password(attrs)
     |> Repo.update()
