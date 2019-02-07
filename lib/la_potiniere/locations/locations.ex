@@ -52,7 +52,7 @@ defmodule LaPotiniere.Locations do
   def create_location(attrs \\ %{}) do
     %Location{}
     |> Location.changeset(attrs)
-    |> Location.insert()
+    |> Repo.insert()
   end
 
   @doc """
