@@ -18,7 +18,8 @@ table.table
         td
           = menu.title
         td
-          = "#{menu.user.name} #{menu.user.username}<#{menu.user.email}>"
+          = if menu.user do
+            = "#{menu.user.name} #{menu.user.username}<#{menu.user.email}>"
         td
           = if menu.picture? == 0 do
             = link "Les contenus", to: Routes.admin_menu_content_path(@conn, :index, menu), class: "btn btn-info"

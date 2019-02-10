@@ -5,7 +5,7 @@ defmodule LaPotiniere.Menus do
 
   import Ecto.Query, warn: false
   alias LaPotiniere.Repo
-
+  alias LaPotiniere.Users.User
   alias LaPotiniere.Menus.Menu
 
   @doc """
@@ -49,9 +49,10 @@ defmodule LaPotiniere.Menus do
       {:error, %Ecto.Changeset{}}
 
   """
-  def create_menu(attrs \\ %{}, current_user) do
-    %Menu{user_id: current_user.id}
+  def create_menu(%User{} = current_user, attrs \\ %{}) do
+    %Menu{}
     |> Menu.changeset(attrs)
+    |> Ecto.Changeset.put_change(:user_id, current_user.id)
     |> Repo.insert()
   end
 

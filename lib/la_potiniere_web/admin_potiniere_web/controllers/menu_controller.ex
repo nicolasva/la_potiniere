@@ -17,7 +17,7 @@ defmodule LaPotiniereWeb.AdminPotiniereWeb.MenuController do
   end
 
   def create(conn, %{"menu" => menu_params}) do
-    case Menus.create_menu(menu_params, conn.assigns.current_user) do
+    case Menus.create_menu(conn.assigns.current_user, menu_params) do
       {:ok, menu} ->
         conn
         |> put_flash(:info, "Ce menu a bien été crée.")
