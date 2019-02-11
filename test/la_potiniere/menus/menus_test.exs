@@ -30,10 +30,7 @@ defmodule LaPotiniere.MenusTest do
 
     def menu_fixture(%Users.User{} = current_user, attrs \\ %{}) do
       attrs =
-      Enum.into(attrs, %{
-        title: "A Title",
-        picture?: 1,
-      })
+      Enum.into(attrs, @valid_attrs)
       {:ok, menu} = Menus.create_menu(current_user, attrs)
       menu
     end
@@ -50,6 +47,13 @@ defmodule LaPotiniere.MenusTest do
       current_user = user_fixture()
       %Menu{id: id} = menu_fixture(current_user)
       assert %Menu{id: ^id} = Menus.get_menu!(id)
+    end
+
+    test "create_menu/2 with valid data creates a menu" do
+      current_user = user_fixture()
+      assert {:ok, %Menu{} = menu} = Menus.create_menu(current_user, @valid_attrs)
+      assert menu.title == "Menu"
+      assert menu.picture? == 1
     end
   end
 end
