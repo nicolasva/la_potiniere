@@ -55,5 +55,10 @@ defmodule LaPotiniere.MenusTest do
       assert menu.title == "Menu"
       assert menu.picture? == 1
     end
+
+    test "create_menu/2 with invalid data returns error changeset" do
+      current_user = user_fixture()
+      assert {:error, %Ecto.Changeset{}} = Menus.create_menu(current_user, @invalid_attrs)
+    end
   end
 end
