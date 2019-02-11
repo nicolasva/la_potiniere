@@ -1,7 +1,10 @@
 defmodule LaPotiniereWeb.AdminPotiniereWeb.ContentController do
   use LaPotiniereWeb.AdminPotiniereWeb, :controller
   
-  alias LaPotiniere.Contents
+  alias LaPotiniere.{
+    Contents,
+    Menus
+  }
   alias LaPotiniere.Contents.Content
   plug :authenticate when action in [:index, :new, :create, :edit, :update, :delete]
 
@@ -17,7 +20,7 @@ defmodule LaPotiniereWeb.AdminPotiniereWeb.ContentController do
   end
 
   def create(conn, %{"content" => content_params, "menu_id" => menu_id}) do
-    case Contents.create_content(content_params, String.to_integer(menu_id)) do
+    case Contents.create_content(Menus.get_menu!(menu_id), content_params) do
       {:ok, content} ->
         conn
         |> put_flash(:info, "Ce contenu a bien été crée.")

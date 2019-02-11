@@ -5,7 +5,7 @@ defmodule LaPotiniere.Contents do
 
   import Ecto.Query, warn: false
   alias LaPotiniere.Repo
-
+  alias LaPotiniere.Menus.Menu
   alias LaPotiniere.Contents.Content
 
   @doc """
@@ -52,9 +52,10 @@ defmodule LaPotiniere.Contents do
       {:error, %Ecto.Changeset{}}
 
   """
-  def create_content(attrs \\ %{}, menu_id) do
-    %Content{menu_id: menu_id}
+  def create_content(%Menu{} = menu, attrs \\ %{}) do
+    %Content{}
     |> Content.changeset(attrs)
+    |> Ecto.Changeset.put_change(:menu_id, menu.id)
     |> Repo.insert()
   end
 
