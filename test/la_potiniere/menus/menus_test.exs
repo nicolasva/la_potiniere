@@ -68,5 +68,12 @@ defmodule LaPotiniere.MenusTest do
       assert %Menu{} = menu
       assert menu.title == "menu update"
     end
+
+    test "update_video/2 with invalid data returns error changeset" do
+      current_user = user_fixture()
+      %Menu{id: id} = menu = menu_fixture(current_user)
+      assert {:error, %Ecto.Changeset{}} = Menus.update_menu(menu, @invalid_attrs)
+      assert %Menu{id: ^id} = Menus.get_menu!(id)
+    end
   end
 end
