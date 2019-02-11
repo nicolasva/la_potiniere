@@ -1,7 +1,10 @@
 defmodule LaPotiniereWeb.AdminPotiniereWeb.EventController do
   use LaPotiniereWeb.AdminPotiniereWeb, :controller
   
-  alias LaPotiniere.Events
+  alias LaPotiniere.{
+    Events,
+    Menus
+  }
   alias LaPotiniere.Events.Event
   plug :authenticate when action in [:index, :new, :create, :edit, :update, :delete]
 
@@ -17,7 +20,7 @@ defmodule LaPotiniereWeb.AdminPotiniereWeb.EventController do
   end
 
   def create(conn, %{"event" => event_params, "menu_id" => menu_id}) do
-    case Events.create_event(event_params, String.to_integer(menu_id)) do
+    case Events.create_event(Menus.get_menu!(menu_id), event_params) do
       {:ok, event} ->
         conn
         |> put_flash(:info, "Cette évènement a bien été crée.")

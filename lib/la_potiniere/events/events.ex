@@ -5,7 +5,7 @@ defmodule LaPotiniere.Events do
 
   import Ecto.Query, warn: false
   alias LaPotiniere.Repo
-
+  alias LaPotiniere.Menus.Menu
   alias LaPotiniere.Events.Event
 
   @doc """
@@ -17,7 +17,7 @@ defmodule LaPotiniere.Events do
       [%Event{}, ...]
 
   """
-  def list_events(menu) do
+  def list_events(%Menu{} = menu) do
     menu_events = 
       menu
       |> Repo.preload(:events)
@@ -52,9 +52,10 @@ defmodule LaPotiniere.Events do
       {:error, %Ecto.Changeset{}}
 
   """
-  def create_event(attrs \\ %{}, menu_id) do
-    %Event{menu_id: menu_id}
+  def create_event(%Menu{} = menu, attrs \\ %{}) do
+    %Event{}
     |> Event.changeset(attrs)
+    |> Ecto.Changeset.put_change(:menu_id, menu.id)
     |> Repo.insert()
   end
 
