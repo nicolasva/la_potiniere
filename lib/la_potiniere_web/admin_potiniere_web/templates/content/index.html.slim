@@ -4,6 +4,7 @@ table.table
   thead
     tr
       th Reference
+      th Master
       th Edition
       th Supression
   tbody
@@ -11,6 +12,8 @@ table.table
       tr
         td
           = content.reference
+        td
+          = link "Affichage par défaut", to: Routes.admin_menu_content_master_path(@conn, :index, @menu, content), class: "btn btn-info"
         td
           = link "Editer", to: Routes.admin_menu_content_path(@conn, :edit, @menu, content), class: "btn btn-info"
         td

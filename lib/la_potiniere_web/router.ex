@@ -30,9 +30,15 @@ defmodule LaPotiniereWeb.Router do
     get "/", PageController, :index
     resources "/users", UserController, only: [:index, :edit, :new, :create, :update, :delete]
     resources "/menus", MenuController, only: [:index, :edit, :new, :create, :update, :delete] do
-      resources "/contents", ContentController, only: [:index, :edit, :new, :create, :update, :delete]
-      resources "/photos", PhotoController, only: [:index, :edit, :new, :create, :update, :delete]
-      resources "/events", EventController, only: [:index, :edit, :new, :create, :update, :delete]
+      resources "/contents", ContentController, only: [:index, :edit, :new, :create, :update, :delete] do
+        resources "/masters", MasterController, only: [:index]
+      end
+      resources "/photos", PhotoController, only: [:index, :edit, :new, :create, :update, :delete] do
+        resources "/masters", MasterController, only: [:index]
+      end
+      resources "/events", EventController, only: [:index, :edit, :new, :create, :update, :delete] do
+        resources "/masters", MasterController, only: [:index]
+      end
     end
     resources "/ckeditorfiles", CkeditorFileController, only: [:create]
   end
