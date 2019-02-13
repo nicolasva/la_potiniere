@@ -19,9 +19,14 @@ defmodule LaPotiniere.Masters do
   end
 
   def create_master(parent) do
+    delete_all()
     changeset = 
       parent
       |>Ecto.build_assoc(:master)
       |> Repo.insert()
+  end
+
+  defp delete_all do
+    LaPotiniere.Masters.Master |> LaPotiniere.Repo.delete_all()
   end
 end
