@@ -13,7 +13,7 @@ defmodule LaPotiniereWeb.AdminPotiniereWeb.MasterController do
     if content_id do
       changeset = Contents.get_content!(content_id)
     end
-    #Masters.create_master(changeset, %{master_checked?: true})
+    Masters.create_master(changeset)
     redirect(conn, to: Routes.admin_menu_content_path(conn, :index, menu_id))
       #{:ok, master} ->
         #  conn

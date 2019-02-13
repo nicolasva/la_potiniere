@@ -6,7 +6,7 @@ defmodule LaPotiniere.Events.Event do
     field :title, :string
     field :comment, :string
     belongs_to :menu, LaPotiniere.Menus.Menu
-    #has_many :masters, {"contents_events", Master}, foreign_key: :assoc_id
+    has_one :master, LaPotiniere.Masters.Master, on_delete: :delete_all
     timestamps()
   end
 

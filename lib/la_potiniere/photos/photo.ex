@@ -8,6 +8,7 @@ defmodule LaPotiniere.Photos.Photo do
     field :legend, :string
     field :photo_file, LaPotiniere.PhotoFile.Type
     belongs_to :menu, LaPotiniere.Menus.Menu
+    has_one :master, LaPotiniere.Masters.Master, on_delete: :delete_all
     timestamps()
   end
 
