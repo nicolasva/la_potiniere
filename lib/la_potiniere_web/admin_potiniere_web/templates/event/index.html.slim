@@ -4,6 +4,7 @@ table.table
   thead
     tr
       th Titre
+      th Affichage par défaut
       th Edition
       th Supression
   tbody
@@ -11,6 +12,8 @@ table.table
       tr
         td
           = event.title
+        td
+          = link "Affichage par défaut", to: Routes.admin_menu_event_master_path(@conn, :index, @menu, event), class: "btn btn-info"
         td
           = link "Editer", to: Routes.admin_menu_event_path(@conn, :edit, @menu, event), class: "btn btn-info"
         td

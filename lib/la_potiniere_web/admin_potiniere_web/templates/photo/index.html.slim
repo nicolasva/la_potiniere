@@ -6,6 +6,7 @@ table.table
       th Titre
       th photo
       th legend
+      th Affichage par défaut
       th Edition
       th Supression
   tbody
@@ -17,6 +18,8 @@ table.table
           = img_tag(LaPotiniere.PhotoFile.url({photo.photo_file.file_name, photo}, :thumb))
         td
           = photo.legend
+        td
+          = link "Affichage par défaut", to: Routes.admin_menu_photo_master_path(@conn, :index, @menu, photo), class: "btn btn-info"
         td
           = link "Editer", to: Routes.admin_menu_photo_path(@conn, :edit, @menu, photo), class: "btn btn-info"
         td
