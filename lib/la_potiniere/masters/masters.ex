@@ -28,7 +28,7 @@ defmodule LaPotiniere.Masters do
       |> Repo.insert()
   end
 
-  def menu_master! do
+  def menu_master do
     master = get_master!(7) |> Repo.preload([[content: :menu], [photo: :menu], [event: :menu]])
     if master.content, do: master.content.menu
     if master.event, do: master.event.menu
