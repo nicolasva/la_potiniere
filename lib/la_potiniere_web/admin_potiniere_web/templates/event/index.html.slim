@@ -13,7 +13,10 @@ table.table
         td
           = event.title
         td
-          = link "Affichage par défaut", to: Routes.admin_menu_event_master_path(@conn, :index, @menu, event), class: "btn btn-info"
+          = if LaPotiniere.Masters.event_master.id == event.id do
+            = link "Affichage par défaut", to: Routes.admin_menu_event_master_path(@conn, :index, @menu, event), class: "btn btn-info"
+          - else
+            = "séléctionné comme page par défaut"
         td
           = link "Editer", to: Routes.admin_menu_event_path(@conn, :edit, @menu, event), class: "btn btn-info"
         td
