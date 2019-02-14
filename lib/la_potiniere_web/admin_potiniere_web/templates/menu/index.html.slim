@@ -19,11 +19,9 @@ table.table
         td
           = menu.title
         td
-          = if menu.user do
-            = "#{menu.user.name} #{menu.user.username}<#{menu.user.email}>"
+          = menu_user(menu)
         td
-          = if LaPotiniere.Masters.menu_master.id == menu.id do
-            = "Contenu afficher de ce menu afficher par défaut"
+          = is_menu_master(LaPotiniere.Masters.menu_master, menu)
         td
           = if menu.picture? == 0 do
             = link "Les contenus", to: Routes.admin_menu_content_path(@conn, :index, menu), class: "btn btn-info"
