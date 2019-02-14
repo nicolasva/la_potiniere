@@ -16,7 +16,8 @@ table.table
           = if LaPotiniere.Masters.content_master.id == content.id do
             = link "Affichage par défaut", to: Routes.admin_menu_content_master_path(@conn, :index, @menu, content), class: "btn btn-info"
           - else
-            = "séléctionné comme page par défaut"
+            span.bg-warning.btn-lg
+              = "séléctionné comme page par défaut"
         td
           = link "Editer", to: Routes.admin_menu_content_path(@conn, :edit, @menu, content), class: "btn btn-info"
         td
