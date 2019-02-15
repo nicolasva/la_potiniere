@@ -112,7 +112,7 @@ eval("$(document).ready(function() {\n  //console.log(\"nicolas\")\n  if (\"#cke
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("jQuery(function() {\n  return $(\"#menus_list\").sortable({\n    items: '.menus',\n    update: function() {\n      return $.ajax({\n        url: \"/admin/menus/:menu_id/sorts\",\n        update: \"GET\",\n        data: $(this).sortable('serialize'),\n        failure: function() {\n          return alert(\"Problem sortable list menus\");\n        }\n      });\n    }\n  });\n});\n\n\n//# sourceURL=webpack:///./js/admin/menus/index.js.coffee?");
+eval("jQuery(function() {\n  return $(\"#menus_list\").sortable({\n    items: '.menus',\n    update: function() {\n      return $.ajax({\n        url: \"/admin/menus/sorts\",\n        update: \"GET\",\n        data: $(this).sortable('serialize'),\n        failure: function() {\n          return alert(\"Problem sortable list menus\");\n        }\n      });\n    }\n  });\n});\n\n\n//# sourceURL=webpack:///./js/admin/menus/index.js.coffee?");
 
 /***/ }),
 

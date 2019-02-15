@@ -3,7 +3,7 @@ jQuery ->
     items: '.menus',
     update: ->
       $.ajax({
-        url: "/admin/menus/:menu_id/sorts",
+        url: "/admin/menus/sorts",
         update: "GET",
         data: $(this).sortable('serialize'),
         failure: ->

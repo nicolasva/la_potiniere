@@ -41,6 +41,7 @@ defmodule LaPotiniereWeb.Router do
         resources "/masters", MasterController, only: [:index]
       end
     end
+    match :get, "/menus/sorts", SortController, :index
     resources "/ckeditorfiles", CkeditorFileController, only: [:create]
   end
 
