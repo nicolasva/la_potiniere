@@ -105,6 +105,17 @@ eval("$(document).ready(function() {\n  //console.log(\"nicolas\")\n  if (\"#cke
 
 /***/ }),
 
+/***/ "./js/admin/menus/index.js.coffee":
+/*!****************************************!*\
+  !*** ./js/admin/menus/index.js.coffee ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("jQuery(function() {\n  return $(\"#menus_list\").sortable({\n    items: '.menus',\n    update: function() {\n      return $.ajax({\n        url: \"/admin/menus/:menu_id/sorts\",\n        update: \"GET\",\n        data: $(this).sortable('serialize'),\n        failure: function() {\n          return alert(\"Problem sortable list menus\");\n        }\n      });\n    }\n  });\n});\n\n\n//# sourceURL=webpack:///./js/admin/menus/index.js.coffee?");
+
+/***/ }),
+
 /***/ "./js/app.js":
 /*!*******************!*\
   !*** ./js/app.js ***!
@@ -113,7 +124,7 @@ eval("$(document).ready(function() {\n  //console.log(\"nicolas\")\n  if (\"#cke
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_app_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/app.scss */ \"./css/app.scss\");\n/* harmony import */ var _css_app_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_app_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var phoenix_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! phoenix_html */ \"../deps/phoenix_html/priv/static/phoenix_html.js\");\n/* harmony import */ var phoenix_html__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(phoenix_html__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _admin_contents_form_js_coffee__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./admin/contents/form.js.coffee */ \"./js/admin/contents/form.js.coffee\");\n/* harmony import */ var _admin_contents_form_js_coffee__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_admin_contents_form_js_coffee__WEBPACK_IMPORTED_MODULE_2__);\n// We need to import the CSS so that webpack will load it.\n// The MiniCssExtractPlugin is used to separate it out into\n// its own CSS file.\n // webpack automatically bundles all modules in your\n// entry points. Those entry points can be configured\n// in \"webpack.config.js\".\n//\n// Import dependencies\n//\n//\n//import \"../node_modules/ckeditor/ckeditor.js\"\n//import 'jquery';\n\n\n // Import local files\n//\n// Local files can be imported directly using relative paths, for example:\n// import socket from \"./socket\"\n\n//# sourceURL=webpack:///./js/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_app_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/app.scss */ \"./css/app.scss\");\n/* harmony import */ var _css_app_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_app_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var phoenix_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! phoenix_html */ \"../deps/phoenix_html/priv/static/phoenix_html.js\");\n/* harmony import */ var phoenix_html__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(phoenix_html__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _admin_contents_form_js_coffee__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./admin/contents/form.js.coffee */ \"./js/admin/contents/form.js.coffee\");\n/* harmony import */ var _admin_contents_form_js_coffee__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_admin_contents_form_js_coffee__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _admin_menus_index_js_coffee__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./admin/menus/index.js.coffee */ \"./js/admin/menus/index.js.coffee\");\n/* harmony import */ var _admin_menus_index_js_coffee__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_admin_menus_index_js_coffee__WEBPACK_IMPORTED_MODULE_3__);\n// We need to import the CSS so that webpack will load it.\n// The MiniCssExtractPlugin is used to separate it out into\n// its own CSS file.\n // webpack automatically bundles all modules in your\n// entry points. Those entry points can be configured\n// in \"webpack.config.js\".\n//\n// Import dependencies\n//\n//\n//import \"../node_modules/ckeditor/ckeditor.js\"\n//import 'jquery';\n\n\n\n // Import local files\n//\n// Local files can be imported directly using relative paths, for example:\n// import socket from \"./socket\"\n\n//# sourceURL=webpack:///./js/app.js?");
 
 /***/ })
 

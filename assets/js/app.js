@@ -14,6 +14,7 @@ import css from "../css/app.scss"
 //import 'jquery';
 import "phoenix_html"
 import "./admin/contents/form.js.coffee"
+import "./admin/menus/index.js.coffee"
 
 // Import local files
 //

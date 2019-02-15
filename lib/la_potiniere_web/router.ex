@@ -30,6 +30,7 @@ defmodule LaPotiniereWeb.Router do
     get "/", PageController, :index
     resources "/users", UserController, only: [:index, :edit, :new, :create, :update, :delete]
     resources "/menus", MenuController, only: [:index, :edit, :new, :create, :update, :delete] do
+      resources "/sorts", SortController, only: [:index]
       resources "/contents", ContentController, only: [:index, :edit, :new, :create, :update, :delete] do
         resources "/masters", MasterController, only: [:index]
       end

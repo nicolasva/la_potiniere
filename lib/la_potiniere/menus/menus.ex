@@ -21,6 +21,16 @@ defmodule LaPotiniere.Menus do
     Repo.all(Menu) |> Repo.preload(:user)
   end
 
+  def position(menus) do
+    Enum.with_index(menus, 1)
+    |> Enum.reduce(%{}, fn({id,index}, acc)-> set_position(index+1, id) end)
+  end
+
+  defp set_position(index, id) do
+    from(menu in Menu, where: menu.id == ^id, update: [set: [position: ^index]])
+    |> Repo.update_all([])
+  end
+
   @doc """
   Gets a single menu.
 

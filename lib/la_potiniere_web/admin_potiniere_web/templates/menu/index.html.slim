@@ -1,6 +1,6 @@
 h2 Liste des menus
 
-table.table
+table.table#menus_list
   thead
     tr
       th
@@ -15,7 +15,7 @@ table.table
         = "Supression"
   tbody
     = for menu <- @menus do
-      tr
+      tr.menus id='menus_#{menu.id}'
         td
           = menu.title
         td
