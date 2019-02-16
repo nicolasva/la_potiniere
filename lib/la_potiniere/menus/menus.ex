@@ -18,7 +18,8 @@ defmodule LaPotiniere.Menus do
 
   """
   def list_menus do
-    Repo.all(Menu) |> Repo.preload(:user)
+    #Repo.all(Menu) |> Repo.preload(:user)
+    from(q in Menu, order_by: q.position) |> Repo.all |> Repo.preload(:user)
   end
 
   def position(menus) do

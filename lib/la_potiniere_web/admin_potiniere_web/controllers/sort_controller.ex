@@ -16,6 +16,8 @@ defmodule LaPotiniereWeb.AdminPotiniereWeb.SortController do
   plug :authenticate when action in [:index]
 
   def index(conn, _params) do
+    if _params["menus"], do: Menus.position(_params["menus"])
+    render(conn, "index.json", results: "true")
   end
 
   defp authenticate(conn, _opts) do
