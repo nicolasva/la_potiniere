@@ -25,7 +25,6 @@ get_id_sortable = (location_href) ->
 get_id_for_sortable_item = (location_href) ->
   regex_location_href = new RegExp("^.{1,}\/(menus|contents|events|photos)$", "g")
   get_page = location_href.scan(regex_location_href)
-  console.log get_page.length > 0
   if get_page.length > 0
     return $("##{get_page[0][0]}_list")
   else
