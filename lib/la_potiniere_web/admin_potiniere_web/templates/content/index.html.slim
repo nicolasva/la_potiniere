@@ -1,6 +1,6 @@
 h2 liste des contenus
 
-table.table
+table.table#contents_list
   thead
     tr
       th Reference
@@ -9,7 +9,7 @@ table.table
       th Supression
   tbody
     = for content <- @contents do
-      tr
+      tr.contents id='contents_#{content.id}'
         td
           = content.reference
         td
