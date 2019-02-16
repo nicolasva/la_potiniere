@@ -33,7 +33,9 @@ defmodule LaPotiniereWeb.Router do
       resources "/sorts", SortController, only: [:index]
       resources "/contents", ContentController, only: [:index, :edit, :new, :create, :update, :delete] do
         resources "/masters", MasterController, only: [:index]
+        resources "/sorts", SortController, only: [:index]
       end
+      match :get, "/contents/sorts", SortController, only: [:index]
       resources "/photos", PhotoController, only: [:index, :edit, :new, :create, :update, :delete] do
         resources "/masters", MasterController, only: [:index]
       end
