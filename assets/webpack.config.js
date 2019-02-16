@@ -26,10 +26,10 @@ module.exports = (env, options) => ({
     filename: 'app.js',
     path: path.resolve(__dirname, '../priv/static/js')
   },
-  /*entry: './js/vendors/jquery/jquery-3.3.1.min.js',
+  /*entry: './js/vendors/lodash/lodash.js',
   output: {
-    filename: 'jquery-3.3.1.min.js',
-    path: path.resolve(__dirname, '../priv/static/js/vendors/jquery')
+    filename: 'lodash.js',
+    path: path.resolve(__dirname, '../priv/static/js/vendors/lodash')
   },*/
   module: {
     rules: [{
