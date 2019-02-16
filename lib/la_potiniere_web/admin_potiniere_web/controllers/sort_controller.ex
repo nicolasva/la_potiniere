@@ -17,6 +17,9 @@ defmodule LaPotiniereWeb.AdminPotiniereWeb.SortController do
 
   def index(conn, _params) do
     if _params["menus"], do: Menus.position(_params["menus"])
+    if _params["contents"], do: Contents.position(_params["contents"])
+    if _params["photos"], do: Photos.position(_params["photos"])
+    if _params["events"], do: Events.position(_params["events"])
     render(conn, "index.json", results: "true")
   end
 

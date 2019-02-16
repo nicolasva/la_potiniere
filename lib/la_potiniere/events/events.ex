@@ -18,10 +18,17 @@ defmodule LaPotiniere.Events do
 
   """
   def list_events(%Menu{} = menu) do
-    menu_events = 
-      menu
-      |> Repo.preload(:events)
-    menu_events.events
+    from(event in Event, where: event.menu_id == ^menu.id, order_by: event.position) |> Repo.all
+  end
+
+  def position(events) do
+    Enum.with_index(events, 1)
+    |> Enum.reduce(%{}, fn({id,index}, acc)-> set_position(index+1, id) end)
+  end
+
+  defp set_position(index, id) do
+    from(event in Event, where: event.id == ^id, update: [set: [position: ^index]])
+    |> Repo.update_all([])
   end
 
   @doc """

@@ -5,6 +5,7 @@ defmodule LaPotiniere.Events.Event do
   schema "events" do
     field :title, :string
     field :comment, :string
+    field :position, :integer
     belongs_to :menu, LaPotiniere.Menus.Menu
     has_one :master, LaPotiniere.Masters.Master, on_delete: :delete_all
     timestamps()

@@ -1,6 +1,6 @@
 h2 Liste des événements
 
-table.table
+table.table#events_list
   thead
     tr
       th Titre
@@ -9,11 +9,11 @@ table.table
       th Supression
   tbody
     = for event <- @events do
-      tr
+      tr.events id='events_#{event.id}'
         td
           = event.title
         td
-          = if LaPotiniere.Masters.event_master.id == event.id do
+          = if is_nil(LaPotiniere.Masters.event_master) || LaPotiniere.Masters.event_master.id == event.id do
             = link "Affichage par défaut", to: Routes.admin_menu_event_master_path(@conn, :index, @menu, event), class: "btn btn-info"
           - else
             span.bg-warning.btn-lg

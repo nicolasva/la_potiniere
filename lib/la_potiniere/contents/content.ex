@@ -5,6 +5,7 @@ defmodule LaPotiniere.Contents.Content do
   schema "contents" do
     field :reference, :string
     field :comment, :string
+    field :position, :integer
     belongs_to :menu, LaPotiniere.Menus.Menu
     has_many :pictures, LaPotiniere.Pictures.Picture, on_delete: :delete_all
     has_one :master, LaPotiniere.Masters.Master, on_delete: :delete_all

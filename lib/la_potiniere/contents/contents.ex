@@ -18,10 +18,17 @@ defmodule LaPotiniere.Contents do
 
   """
   def list_contents(%Menu{} = menu) do
-    menu_contents = 
-      menu
-      |> Repo.preload(:contents)
-    menu_contents.contents
+    from(content in Content, where: content.menu_id == ^menu.id, order_by: content.position) |> Repo.all
+  end
+
+  def position(contents) do
+    Enum.with_index(contents, 1)
+    |> Enum.reduce(%{}, fn({id,index}, acc)-> set_position(index+1, id) end)
+  end
+
+  defp set_position(index, id) do
+    from(content in Content, where: content.id == ^id, update: [set: [position: ^index]])
+    |> Repo.update_all([])
   end
 
   @doc """

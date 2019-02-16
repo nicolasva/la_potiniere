@@ -6,6 +6,7 @@ defmodule LaPotiniere.Photos.Photo do
   schema "photos" do
     field :title, :string
     field :legend, :string
+    field :position, :integer
     field :photo_file, LaPotiniere.PhotoFile.Type
     belongs_to :menu, LaPotiniere.Menus.Menu
     has_one :master, LaPotiniere.Masters.Master, on_delete: :delete_all

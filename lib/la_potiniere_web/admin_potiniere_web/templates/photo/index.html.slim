@@ -1,6 +1,6 @@
 h2 Liste des photos
 
-table.table
+table.table#photos_list
   thead
     tr
       th Titre
@@ -11,7 +11,7 @@ table.table
       th Supression
   tbody
     = for photo <- @photos do
-      tr
+      tr.photos id='photos_#{photo.id}'
         td
           = photo.title
         td
@@ -19,7 +19,7 @@ table.table
         td
           = photo.legend
         td
-          = if LaPotiniere.Masters.photo_master.id == photo.id do
+          = if is_nil(LaPotiniere.Masters.photo_master) || LaPotiniere.Masters.photo_master.id == photo.id do
             = link "Affichage par défaut", to: Routes.admin_menu_photo_master_path(@conn, :index, @menu, photo), class: "btn btn-info"
           - else
             span.bg-warning.btn-lg

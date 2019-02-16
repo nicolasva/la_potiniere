@@ -5,7 +5,7 @@ defmodule LaPotiniere.Photos do
 
   import Ecto.Query, warn: false
   alias LaPotiniere.Repo
-
+  alias LaPotiniere.Menus.Menu
   alias LaPotiniere.Photos.Photo
 
   @doc """
@@ -17,12 +17,20 @@ defmodule LaPotiniere.Photos do
       [%Photo{}, ...]
 
   """
-  def list_photos(menu) do
-    menu_photos = 
-      menu
-      |> Repo.preload(:photos)
-    menu_photos.photos
+  def list_photos(%Menu{} = menu) do
+    from(photo in Photo, where: photo.menu_id == ^menu.id, order_by: photo.position) |> Repo.all
   end
+
+  def position(photos) do
+    Enum.with_index(photos, 1)
+    |> Enum.reduce(%{}, fn({id,index}, acc)-> set_position(index+1, id) end)
+  end
+
+  defp set_position(index, id) do
+    from(photo in Photo, where: photo.id == ^id, update: [set: [position: ^index]])
+    |> Repo.update_all([])
+  end
+:w
 
   @doc """
   Gets a single photo.
