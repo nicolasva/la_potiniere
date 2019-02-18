@@ -22,8 +22,8 @@ module.exports = (env, options) => ({
     ]
   },
   entry: {
-    admin: './js/admin/app.js',
     front: './js/front/app.js',
+    admin: './js/admin/app.js',
   },
   output: {
     filename: '[name].js',
@@ -87,11 +87,9 @@ module.exports = (env, options) => ({
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '../css/front/app.css'
+      filename: "../css/[name]/app.css",
     }),
-    new MiniCssExtractPlugin({
-      filename: '../css/admin/app.css'
-    }),
+
     new CopyWebpackPlugin([
       {
         from: 'static/',
@@ -108,6 +106,10 @@ module.exports = (env, options) => ({
 
       { from: '/home/nicolas/VANDENBOGAERDE_Nicolas/phoenix/la_potiniere/assets/js/vendors/jquery/',
         to: 'vendors/jquery/'
+      },
+
+      { from: '/home/nicolas/VANDENBOGAERDE_Nicolas/phoenix/la_potiniere/assets/fonts/',
+        to: 'fonts/'
       },
     ]),
     /*new webpack.ProvidePlugin({
