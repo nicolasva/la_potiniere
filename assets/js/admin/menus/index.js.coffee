@@ -1,5 +1,5 @@
 jQuery ->
-  unless location_ajax(window.location.href)
+  if location_ajax(window.location.href) != false
     get_id_for_sortable_item(window.location.href).sortable({
       items: get_id_sortable(window.location.href),
       update: ->
