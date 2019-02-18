@@ -30,17 +30,6 @@ module.exports = (env, options) => ({
     path: path.resolve(__dirname, '../priv/static/js/')
   },
 
-  /*entry: './js/app.js',
-  output: {
-    filename: 'app.js',
-    path: path.resolve(__dirname, '../priv/static/js/')
-  },*/
-
-  /*entry: './js/vendors/lodash/lodash.js',
-  output: {
-    filename: 'lodash.js',
-    path: path.resolve(__dirname, '../priv/static/js/vendors/lodash')
-  },*/
   module: {
     rules: [{
         test: /\.coffee$/,
