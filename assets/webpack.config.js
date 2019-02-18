@@ -108,8 +108,17 @@ module.exports = (env, options) => ({
         from: 'static/',
         to: '../'
       },
+
       { from: '/home/nicolas/VANDENBOGAERDE_Nicolas/phoenix/la_potiniere/assets/js/vendors/ckeditor/',
-        to: 'ckeditor/'
+        to: 'vendors/ckeditor/'
+      },
+
+      { from: '/home/nicolas/VANDENBOGAERDE_Nicolas/phoenix/la_potiniere/assets/js/vendors/lodash/',
+        to: 'vendors/lodash/'
+      },
+
+      { from: '/home/nicolas/VANDENBOGAERDE_Nicolas/phoenix/la_potiniere/assets/js/vendors/jquery/',
+        to: 'vendors/jquery/'
       },
     ]),
     /*new webpack.ProvidePlugin({
