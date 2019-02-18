@@ -103,10 +103,15 @@ module.exports = (env, options) => ({
     new MiniCssExtractPlugin({
       filename: '../css/admin/app.css'
     }),
-    new CopyWebpackPlugin([{
-      from: 'static/',
-      to: '../'
-    }]),
+    new CopyWebpackPlugin([
+      {
+        from: 'static/',
+        to: '../'
+      },
+      { from: '/home/nicolas/VANDENBOGAERDE_Nicolas/phoenix/la_potiniere/assets/js/vendors/ckeditor/',
+        to: 'ckeditor/'
+      },
+    ]),
     /*new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery'
