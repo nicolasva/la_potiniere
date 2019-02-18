@@ -22,13 +22,19 @@ module.exports = (env, options) => ({
     ]
   },
   entry: {
-    pageOne: './js/front/app.js',
-    pageTwo: './js/admin/app.js',
+    admin: './js/admin/app.js',
+    front: './js/front/app.js',
   },
   output: {
-    filename: 'app.js',
-    path: path.resolve(__dirname, '../priv/static/js/front/')
+    filename: '[name].js',
+    path: path.resolve(__dirname, '../priv/static/js/')
   },
+
+  /*entry: './js/app.js',
+  output: {
+    filename: 'app.js',
+    path: path.resolve(__dirname, '../priv/static/js/')
+  },*/
 
   /*entry: './js/vendors/lodash/lodash.js',
   output: {
@@ -93,6 +99,9 @@ module.exports = (env, options) => ({
   plugins: [
     new MiniCssExtractPlugin({
       filename: '../css/front/app.css'
+    }),
+    new MiniCssExtractPlugin({
+      filename: '../css/admin/app.css'
     }),
     new CopyWebpackPlugin([{
       from: 'static/',

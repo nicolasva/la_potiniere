@@ -83,6 +83,17 @@ eval("\n\n(function () {\n  var PolyfillEvent = eventConstructor();\n\n  functio
 
 /***/ }),
 
+/***/ "./css/front/app.scss":
+/*!****************************!*\
+  !*** ./css/front/app.scss ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./css/front/app.scss?");
+
+/***/ }),
+
 /***/ "./js/front/app.js":
 /*!*************************!*\
   !*** ./js/front/app.js ***!
@@ -91,7 +102,7 @@ eval("\n\n(function () {\n  var PolyfillEvent = eventConstructor();\n\n  functio
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n!(function webpackMissingModule() { var e = new Error(\"Cannot find module \\\"./css/app.scss\\\"\"); e.code = 'MODULE_NOT_FOUND'; throw e; }());\n/* harmony import */ var phoenix_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! phoenix_html */ \"../deps/phoenix_html/priv/static/phoenix_html.js\");\n/* harmony import */ var phoenix_html__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(phoenix_html__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _vendors_lodash_lodash_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../vendors/lodash/lodash.js */ \"./js/vendors/lodash/lodash.js\");\n/* harmony import */ var _vendors_lodash_lodash_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_vendors_lodash_lodash_js__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _vendors_scanjs_scan_js_coffee__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../vendors/scanjs/scan.js.coffee */ \"./js/vendors/scanjs/scan.js.coffee\");\n/* harmony import */ var _vendors_scanjs_scan_js_coffee__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_vendors_scanjs_scan_js_coffee__WEBPACK_IMPORTED_MODULE_3__);\n// We need to import the CSS so that webpack will load it.\n// The MiniCssExtractPlugin is used to separate it out into\n// its own CSS file.\n // webpack automatically bundles all modules in your\n// entry points. Those entry points can be configured\n// in \"webpack.config.js\".\n//\n// Import dependencies\n//\n//\n//import \"../node_modules/ckeditor/ckeditor.js\"\n//import 'jquery';\n\n\n\n // Import local files\n//\n// Local files can be imported directly using relative paths, for example:\n// import socket from \"./socket\"\n\n//# sourceURL=webpack:///./js/front/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_front_app_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../css/front/app.scss */ \"./css/front/app.scss\");\n/* harmony import */ var _css_front_app_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_front_app_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var phoenix_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! phoenix_html */ \"../deps/phoenix_html/priv/static/phoenix_html.js\");\n/* harmony import */ var phoenix_html__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(phoenix_html__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _vendors_lodash_lodash_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../vendors/lodash/lodash.js */ \"./js/vendors/lodash/lodash.js\");\n/* harmony import */ var _vendors_lodash_lodash_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_vendors_lodash_lodash_js__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _vendors_scanjs_scan_js_coffee__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../vendors/scanjs/scan.js.coffee */ \"./js/vendors/scanjs/scan.js.coffee\");\n/* harmony import */ var _vendors_scanjs_scan_js_coffee__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_vendors_scanjs_scan_js_coffee__WEBPACK_IMPORTED_MODULE_3__);\n// We need to import the CSS so that webpack will load it.\n// The MiniCssExtractPlugin is used to separate it out into\n// its own CSS file.\n // webpack automatically bundles all modules in your\n// entry points. Those entry points can be configured\n// in \"webpack.config.js\".\n//\n// Import dependencies\n//\n//\n//import \"../node_modules/ckeditor/ckeditor.js\"\n//import 'jquery';\n\n\n\n // Import local files\n//\n// Local files can be imported directly using relative paths, for example:\n// import socket from \"./socket\"\n\n//# sourceURL=webpack:///./js/front/app.js?");
 
 /***/ }),
 
