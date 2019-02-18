@@ -21,11 +21,15 @@ module.exports = (env, options) => ({
       new OptimizeCSSAssetsPlugin({})
     ]
   },
-  entry: './js/app.js',
+  entry: {
+    pageOne: './js/front/app.js',
+    pageTwo: './js/admin/app.js',
+  },
   output: {
     filename: 'app.js',
-    path: path.resolve(__dirname, '../priv/static/js')
+    path: path.resolve(__dirname, '../priv/static/js/front/')
   },
+
   /*entry: './js/vendors/lodash/lodash.js',
   output: {
     filename: 'lodash.js',
@@ -88,7 +92,7 @@ module.exports = (env, options) => ({
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '../css/app.css'
+      filename: '../css/front/app.css'
     }),
     new CopyWebpackPlugin([{
       from: 'static/',

@@ -7,7 +7,7 @@ html lang="en"
     meta content="" name="description"
     meta content="" name="author"
     title La Potinière
-    link rel="stylesheet" href="#{Routes.static_path(@conn, "/css/app.css")}"
+    link rel="stylesheet" href="#{Routes.static_path(@conn, "/css/admin/app.css")}"
     link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     script src="#{Routes.static_path(@conn, "/js/vendors/jquery/jquery-3.3.1.min.js")}"
     script src="#{Routes.static_path(@conn, "/js/vendors/jquery/jquery-ui.min.js")}"
@@ -35,4 +35,4 @@ html lang="en"
         = get_flash(@conn, :error)
       = render @view_module, @view_template, assigns
 
-    script src="#{Routes.static_path(@conn, "/js/app.js")}"
+    script src="#{Routes.static_path(@conn, "/js/admin/app.js")}"
