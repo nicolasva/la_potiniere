@@ -10,23 +10,51 @@ html lang="en"
     link rel="stylesheet" href="#{Routes.static_path(@conn, "/css/front/app.css")}"
     link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
   body
-    header
-      section.container
-        nav role="navigation"
-          ul
-            = if @current_user do
-              li
-                = link "Deconnexion", to: Routes.auth_session_path(@conn, :delete, @current_user), method: "delete"
-            - else
-              li
-                = link "Log in", to: Routes.auth_session_path(@conn, :new)
-        = link to: "http://phoenixframework.org/", class: "phx-logo" do
-          = img_tag(Routes.static_path(@conn, "/images/phoenix.png"), alt: "Phoenix Framework Logo")
-    main.container role="main"
+    .menu-trigger
+      span
+      span
+      span
+    header.fixed-menu
+      span.menu-close
+        i.fa.fa-times
+      .menu-header
+        .logo.d-flex.justify-content-center
+          = img_tag("images/front/logo.png")
+      .nav-wraper
+        .navbar
+          ul.navbar-nav
+            li.nav-item
+              a.nav-link.active href="#"
+                = img_tag("/images/front/header/nav-icon1.png")
+                = "home"
+            = for menu <- LaPotiniere.Menus.list_menus() do
+              li.nav-item
+                = link menu.title, to: "#", class: "nav-link active"
+
+    main.site-main role="main"
       p.alert.alert-info role="alert"
         = get_flash(@conn, :info)
       p.alert.alert-danger role="alert"
         = get_flash(@conn, :error)
       = render @view_module, @view_template, assigns
+      footer class="footer-area overlay"
+        .container
+          .row
+            .col-lg-2.col-md-4.col-sm-6
+              .single-footer-widget
+                h6 
+                  a href="#" style="color: white;"
+                    Les mentions légales
+            .col-lg-2.col-md-4.col-sm-6
+              .single-footer-widget
+                h6 
+                  a href="#" style="color: white;"
+                    Pour nous trouver
+
+            .col-lg-2.col-md-4.col-sm-6
+              .single-footer-widget
+                h6 
+                  a href="#" style="color: white;"
+                    Pour nous contacter
 
     script src="#{Routes.static_path(@conn, "/js/front.js")}"

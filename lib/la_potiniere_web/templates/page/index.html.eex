@@ -1,35 +1,65 @@
-<section class="phx-hero">
-  <h1><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h1>
-  <p>A productive web framework that<br/>does not compromise speed and maintainability.</p>
+<section class="home_banner_area" style="height: 700px;">
+  <div class="banner_inner">
+    <div class="container-fluid no-padding">
+      <div class="row fullscreen">
+      </div>
+    </div>
+  </div>
 </section>
+<div class="row banner-bottom align-items-center justify-content-center">
+  <div class="col-lg-4">
+    <div class="video-popup d-flex align-items-center">
+      <a class="play-video video-play-button animate" href="https://www.youtube.com/watch?v=KUln2DXU5VE" data-animate="zoomIn"
+       data-duration="1.5s" data-delay="0.1s">
+        <span><img src="img/banner/play-icon.png" alt=""></span>
+      </a>
+      <div class="watch">
+        <h6>Watch video</h6>
+        <p>You will love our execution</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-8">
+    <div class="banner_content">
+      <div class="row d-flex align-items-center">
+        <div class="col-lg-8 col-md-12">
+          <p class="top-text">Steak Shop offers best steak in town</p>
+          <h1>Steak Shop offers best steak in town</h1>
+          <p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards
+            especially in the workplace. That’s why it’s crucial that, as women.</p>
+        </div>
+        <div class="col-lg-4 col-md-12">
+          <div class="banner-btn">
+            <a class="primary-btn text-uppercase" href="#">Explore Menu</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<section class="row">
-  <article class="column">
-    <h2>Resources</h2>
-    <ul>
-      <li>
-        <a href="https://hexdocs.pm/phoenix/overview.html">Guides &amp; Docs</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix">Source</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix/blob/v1.4/CHANGELOG.md">v1.4 Changelog</a>
-      </li>
-    </ul>
-  </article>
-  <article class="column">
-    <h2>Help</h2>
-    <ul>
-      <li>
-        <a href="https://elixirforum.com/c/phoenix-forum">Forum</a>
-      </li>
-      <li>
-        <a href="https://webchat.freenode.net/?channels=elixir-lang">#elixir-lang on Freenode IRC</a>
-      </li>
-      <li>
-        <a href="https://twitter.com/elixirphoenix">Twitter @elixirphoenix</a>
-      </li>
-    </ul>
-  </article>
-</section>
+<div class="breakfast-area section_gap_top">
+  <div class="container">
+    <div class="row align-items-center justify-content-center">
+      <div class="col-lg-12">
+        <div class="left-content">
+          <h1>Daily Food Courses with Drinks </h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+          <a href="#" class="primary-btn">See Full Menu</a>
+        </div>
+      </div>
+      <div class="col-lg-6 offset-lg-1">
+        <div class="right-img">
+          <img class="img1 img-fluid" src="img/food/food1.jpg" alt="">
+          <img class="img2 img-fluid" src="img/food/food2.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
