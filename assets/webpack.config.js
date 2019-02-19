@@ -109,7 +109,11 @@ module.exports = (env, options) => ({
       },
 
       { from: '/home/nicolas/VANDENBOGAERDE_Nicolas/phoenix/la_potiniere/assets/fonts/',
-        to: 'fonts/'
+        to: '../fonts/'
+      },
+
+      { from: '/home/nicolas/VANDENBOGAERDE_Nicolas/phoenix/la_potiniere/assets/images/',
+        to: '../images/'
       },
     ]),
     /*new webpack.ProvidePlugin({

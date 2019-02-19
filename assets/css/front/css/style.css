@@ -411,7 +411,7 @@ button:focus {
 ============================================================================================ */
 .home_banner_area {
   z-index: 1;
-  background: url(../img/banner/home-banner.jpg) no-repeat scroll center center;
+  background: url(/images/front/banner/home-banner.jpg) no-repeat scroll center center;
   background-size: cover; }
   @media (max-width: 767px) {
     .home_banner_area {
@@ -501,7 +501,7 @@ button:focus {
           padding: 0 30px; } }
 
 .home_banner_area.common-banner {
-  background: url(../img/banner/common-banner.jpg) no-repeat scroll center center;
+  background: url(/images/front/banner/common-banner.jpg) no-repeat scroll center center;
   background-size: cover; }
   .home_banner_area.common-banner .banner_inner .fullscreen {
     height: 540px !important; }
@@ -588,7 +588,7 @@ button:focus {
     min-height: 780px;
     z-index: 1; }
     .blog_banner .banner_inner .overlay {
-      background: url(../img/banner/banner-2.jpg) no-repeat scroll center center;
+      background: url(/images/front/banner/banner-2.jpg) no-repeat scroll center center;
       opacity: 0.5;
       height: 125%;
       position: absolute;
@@ -675,7 +675,7 @@ button:focus {
 /* Start reservation Area css
 ============================================================================================ */
 .reservation-area {
-  background: url(../img/reservation-bg.jpg) center no-repeat;
+  background: url(/images/front/reservation-bg.jpg) center no-repeat;
   background-size: cover;
   max-height: 600px;
   margin-bottom: 150px; }
@@ -2393,7 +2393,7 @@ h6 {
   color: #222222; }
 
 .primary-checkbox input:checked + label {
-  background: url(../img/elements/primary-check.png) no-repeat center center/cover;
+  background: url(/images/front/elements/primary-check.png) no-repeat center center/cover;
   border: none; }
 
 .confirm-checkbox {
@@ -2427,7 +2427,7 @@ h6 {
   border: 1px solid #f1f1f1; }
 
 .confirm-checkbox input:checked + label {
-  background: url(../img/elements/success-check.png) no-repeat center center/cover;
+  background: url(/images/front/elements/success-check.png) no-repeat center center/cover;
   border: none; }
 
 .disabled-checkbox {
@@ -2465,7 +2465,7 @@ h6 {
   z-index: 3; }
 
 .disabled-checkbox input:checked + label {
-  background: url(../img/elements/disabled-check.png) no-repeat center center/cover;
+  background: url(/images/front/elements/disabled-check.png) no-repeat center center/cover;
   border: none; }
 
 .primary-radio {
@@ -2499,7 +2499,7 @@ h6 {
   border: 1px solid #f1f1f1; }
 
 .primary-radio input:checked + label {
-  background: url(../img/elements/primary-radio.png) no-repeat center center/cover;
+  background: url(/images/front/elements/primary-radio.png) no-repeat center center/cover;
   border: none; }
 
 .confirm-radio {
@@ -2533,7 +2533,7 @@ h6 {
   border: 1px solid #f1f1f1; }
 
 .confirm-radio input:checked + label {
-  background: url(../img/elements/success-radio.png) no-repeat center center/cover;
+  background: url(/images/front/elements/success-radio.png) no-repeat center center/cover;
   border: none; }
 
 .disabled-radio {
@@ -2580,7 +2580,7 @@ h6 {
   padding: 0px; }
 
 .disabled-radio input:checked + label {
-  background: url(../img/elements/disabled-radio.png) no-repeat center center/cover;
+  background: url(/images/front/elements/disabled-radio.png) no-repeat center center/cover;
   border: none; }
 
 .default-select {
@@ -2725,7 +2725,7 @@ h6 {
 /*----------------------------------------------------*/
 /*============== footer-area css ===============*/
 .footer-area {
-  background: url(../img/footer-bg.jpg) center no-repeat;
+  background: url(/images/front/footer-bg.jpg) center no-repeat;
   background-size: cover;
   z-index: 1;
   padding: 100px 0; }
