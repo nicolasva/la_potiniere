@@ -11,6 +11,10 @@
     = label f, :title, class: "control-label"
     = text_input f, :title, placeholder: "Titre", class: "form-control"
     = error_tag f, :title
+  .form-group
+    = label f, :preview_comment, class: "control-label"
+    = text_input f, :preview_comment, placeholder: "Commentaire sur le menu", class: "form-control"
+    = error_tag f, :preview_comment
   //.form-group
     = label f, :user_id, class: "control-label"
     = text_input f, :user_id, placeholder: "Titre", class: "form-control"

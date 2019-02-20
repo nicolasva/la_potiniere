@@ -115,6 +115,10 @@ module.exports = (env, options) => ({
       { from: '/home/nicolas/VANDENBOGAERDE_Nicolas/phoenix/la_potiniere/assets/images/',
         to: '../images/'
       },
+
+      { from: '/home/nicolas/VANDENBOGAERDE_Nicolas/phoenix/la_potiniere/assets/js/front/vendors/lightbox/',
+        to: 'front/vendors/lightbox/'
+      },
     ]),
     /*new webpack.ProvidePlugin({
       $: 'jquery',

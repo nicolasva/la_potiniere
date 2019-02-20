@@ -1,13 +1,8 @@
-section.home_banner_area
-  .banner_inner
-    .container-fluid.no-padding
-      .row.fullscreen
-
-.row.banner-bottom.align-items-center.justify-content-center
-  .video-popup.d-flex.align-items-center
-    .banner_content
-      .row.d-flex.align-items-center
-        .col-lg-12.col-md-12.text-center
+.breakfast-area.section_gap_top
+  .container
+    .row.align-items-center.justify-content-center
+      .col-lg-5
+        .left-content
           = if @menu.picture? == 1 do
             = render(LaPotiniereWeb.PhotoView, "photo_lists.html", photos: @menu.photos)
           //p.top-text

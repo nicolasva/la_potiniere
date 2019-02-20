@@ -9,6 +9,9 @@ html lang="en"
     title La Potinière
     link rel="stylesheet" href="#{Routes.static_path(@conn, "/css/front/app.css")}"
     link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    script src="#{Routes.static_path(@conn, "/js/vendors/jquery/jquery-3.3.1.min.js")}"
+    script src="#{Routes.static_path(@conn, "/js/vendors/jquery/jquery-ui.min.js")}"
+    script src="#{Routes.static_path(@conn, "/js/front/vendors/lightbox/lightbox.js")}"
   body
     .menu-trigger
       span
@@ -36,6 +39,24 @@ html lang="en"
         = get_flash(@conn, :info)
       p.alert.alert-danger role="alert"
         = get_flash(@conn, :error)
+
+      section.home_banner_area
+        .banner_inner
+          .container-fluid.no-padding
+            .row.fullscreen
+
+      .row.banner-bottom.align-items-center.justify-content-center
+        .col-lg-4
+          .video-popup.d-flex.align-items-center
+
+        .col-lg-8
+          .banner_content
+            .row.d-flex.align-items-center
+              .col-lg-8.col-md-12
+                h1
+                  = @menu.title
+                p
+                  = @menu.preview_comment
       = render @view_module, @view_template, assigns
       footer class="footer-area overlay"
         .container

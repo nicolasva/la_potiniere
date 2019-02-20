@@ -12,6 +12,7 @@ defmodule LaPotiniere.Menus.Menu do
     field :title, :string
     field :picture?, :integer
     field :position, :integer
+    field :preview_comment, :string
     has_many :contents, LaPotiniere.Contents.Content, on_delete: :delete_all
     has_many :photos, LaPotiniere.Photos.Photo, on_delete: :delete_all
     has_many :events, LaPotiniere.Events.Event, on_delete: :delete_all
@@ -23,7 +24,7 @@ defmodule LaPotiniere.Menus.Menu do
 
   def changeset(menu, attrs) do
     menu
-    |> cast(attrs, [:title, :picture?])
+    |> cast(attrs, [:title, :picture?, :preview_comment])
     |> validate_required([:title])
   end
 end
