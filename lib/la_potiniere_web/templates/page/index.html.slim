@@ -7,7 +7,7 @@ section.home_banner_area
   .video-popup.d-flex.align-items-center
     .banner_content
       .row.d-flex.align-items-center
-        .col-lg-8.col-md-12
+        .col-lg-12.col-md-12.text-center
           = if @menu.picture? == 1 do
             = render(LaPotiniereWeb.PhotoView, "photo_lists.html", photos: @menu.photos)
           //p.top-text
