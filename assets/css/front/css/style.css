@@ -410,6 +410,7 @@ button:focus {
 /* Home Banner Area css
 ============================================================================================ */
 .home_banner_area {
+  height: 700px;
   z-index: 1;
   background: url(/images/front/banner/home-banner.jpg) no-repeat scroll center center;
   background-size: cover; }
@@ -458,6 +459,9 @@ button:focus {
         text-transform: uppercase;
         letter-spacing: 2px;
         margin: 0; }
+  .banner_content {
+    width: 800px;
+  }
   .banner-bottom .banner_content {
     background: #fff;
     padding: 90px 70px; }

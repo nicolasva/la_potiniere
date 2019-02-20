@@ -1,0 +1,8 @@
+ul.list-inline
+  = for photo <- @photos do
+    li.list-inline-item
+      = photo.title
+      br
+      = img_tag(LaPotiniere.PhotoFile.url({photo.photo_file.file_name, photo}, :thumb))
+      br
+      = photo.legend
