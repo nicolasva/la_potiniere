@@ -3,6 +3,6 @@ ul.list-inline.align-middle
     li.list-inline-item.mr-md-5
       = photo.title
       br
-      = img_tag(LaPotiniere.PhotoFile.url({photo.photo_file.file_name, photo}, :thumb))
+      = link img_tag(LaPotiniere.PhotoFile.url({photo.photo_file.file_name, photo}, :thumb)), to: LaPotiniere.PhotoFile.url({photo.photo_file.file_name, photo}, :original), "data-lightbox": "photo", "data-title": photo.legend
       br
       = photo.legend
