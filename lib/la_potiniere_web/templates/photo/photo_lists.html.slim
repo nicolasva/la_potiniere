@@ -1,8 +1,13 @@
-ul.list-inline.align-middle
-  = for photo <- @photos do
-    li.list-inline-item.mr-md-5
-      = photo.title
-      br
-      = link img_tag(LaPotiniere.PhotoFile.url({photo.photo_file.file_name, photo}, :thumb)), to: LaPotiniere.PhotoFile.url({photo.photo_file.file_name, photo}, :original), "data-lightbox": "photo", "data-title": photo.legend
-      br
-      = photo.legend
+.breakfast-area.section_gap_top
+  .container
+    .row.align-items-center.justify-content-center
+      .col-lg-5
+        .left-content
+          ul.list-inline.align-middle
+            = for photo <- @photos do
+              li.list-inline-item.mr-md-5
+                = photo.title
+                br
+                = link img_tag(LaPotiniere.PhotoFile.url({photo.photo_file.file_name, photo}, :thumb)), to: LaPotiniere.PhotoFile.url({photo.photo_file.file_name, photo}, :original), "data-lightbox": "photo", "data-title": photo.legend
+                br
+                = photo.legend

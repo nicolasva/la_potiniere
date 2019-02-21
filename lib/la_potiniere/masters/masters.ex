@@ -15,7 +15,7 @@ defmodule LaPotiniere.Masters do
   """
 
   def list_masters do
-    Repo.all(Master) |> Repo.preload(:events) |> Repo.preload(:pictures) |> Repo.preload(:contents)
+    Repo.all(Master) |> Repo.preload(:event) |> Repo.preload(:picture) |> Repo.preload(:content)
   end
 
   def get_master!, do: Repo.one(Master)
@@ -45,9 +45,10 @@ defmodule LaPotiniere.Masters do
 
   def menu_master do
     master = get_master! |> Repo.preload([[content: :menu], [photo: :menu], [event: :menu]])
-    if master.content, do: master.content.menu
-    if master.event, do: master.event.menu
-    if master.photo, do: master.photo.menu
+    if master.content, do: result = master.content.menu
+    if master.event, do: result = master.event.menu
+    if master.photo, do: result = master.photo.menu
+    result
   end
 
   defp delete_all do

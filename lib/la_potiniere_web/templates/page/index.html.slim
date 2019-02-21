@@ -1,16 +1,5 @@
-.breakfast-area.section_gap_top
-  .container
-    .row.align-items-center.justify-content-center
-      .col-lg-5
-        .left-content
-          = if @menu.picture? == 1 do
-            = render(LaPotiniereWeb.PhotoView, "photo_lists.html", photos: @menu.photos)
-          //p.top-text
-            Steak Shop offers best steak in town
-          //h1 Steak Shop offers best steak in town
-          //p
-            inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why it’s crucial that, as women.
-        //.col-lg-4.col-md-12
-          .banner-btn
-            = link "Explore Menu", to: "#", class: "primary-btn.text-uppercase"
+= if @menu.picture? == 1 do
+  = render(LaPotiniereWeb.PhotoView, "photo_lists.html", photos: @menu.photos)
+- if @menu.picture? == 0 do
+  = render(LaPotiniereWeb.ContentView, "content_lists.html", contents: @menu.contents)
 
