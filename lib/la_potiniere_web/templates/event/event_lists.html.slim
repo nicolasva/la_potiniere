@@ -1,0 +1,13 @@
+.breakfast-area.section_gap_top
+  .container
+    .row.align-items-center.justify-content-center
+      .col-lg-5
+        .left-content
+          table class='table'
+            tbody
+              = for event <- @events do
+                tr
+                  td
+                    = event.title
+
+
