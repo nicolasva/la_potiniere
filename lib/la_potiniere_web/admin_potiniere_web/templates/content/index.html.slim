@@ -14,10 +14,10 @@ table.table#contents_list
           = content.reference
         td
           = if is_nil(LaPotiniere.Masters.content_master) || LaPotiniere.Masters.content_master.id == content.id do
-            = link "Affichage par défaut", to: Routes.admin_menu_content_master_path(@conn, :index, @menu, content), class: "btn btn-info"
-          - else
             span.bg-warning.btn-lg
               = "séléctionné comme page par défaut"
+          - else
+            = link "Affichage par défaut", to: Routes.admin_menu_content_master_path(@conn, :index, @menu, content), class: "btn btn-info"
         td
           = link "Editer", to: Routes.admin_menu_content_path(@conn, :edit, @menu, content), class: "btn btn-info"
         td

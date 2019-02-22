@@ -14,10 +14,10 @@ table.table#events_list
           = event.title
         td
           = if is_nil(LaPotiniere.Masters.event_master) || LaPotiniere.Masters.event_master.id == event.id do
-            = link "Affichage par défaut", to: Routes.admin_menu_event_master_path(@conn, :index, @menu, event), class: "btn btn-info"
-          - else
             span.bg-warning.btn-lg
               = "séléctionné comme page par défaut"
+          - else
+            = link "Affichage par défaut", to: Routes.admin_menu_event_master_path(@conn, :index, @menu, event), class: "btn btn-info"
         td
           = link "Editer", to: Routes.admin_menu_event_path(@conn, :edit, @menu, event), class: "btn btn-info"
         td

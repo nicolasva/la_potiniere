@@ -20,10 +20,10 @@ table.table#photos_list
           = photo.legend
         td
           = if is_nil(LaPotiniere.Masters.photo_master) || LaPotiniere.Masters.photo_master.id == photo.id do
-            = link "Affichage par défaut", to: Routes.admin_menu_photo_master_path(@conn, :index, @menu, photo), class: "btn btn-info"
-          - else
             span.bg-warning.btn-lg
               = "séléctionné comme page par défaut"
+          - else
+            = link "Affichage par défaut", to: Routes.admin_menu_photo_master_path(@conn, :index, @menu, photo), class: "btn btn-info"
         td
           = link "Editer", to: Routes.admin_menu_photo_path(@conn, :edit, @menu, photo), class: "btn btn-info"
         td
