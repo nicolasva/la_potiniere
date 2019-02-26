@@ -19,7 +19,7 @@ table.table#photos_list
         td
           = photo.legend
         td
-          = if is_nil(LaPotiniere.Masters.photo_master) || LaPotiniere.Masters.photo_master.id == photo.id do
+          = if is_nil(LaPotiniere.Masters.photo_master) || LaPotiniere.Masters.photo_master.id != photo.id do
             span.bg-warning.btn-lg
               = "séléctionné comme page par défaut"
           - else

@@ -13,7 +13,7 @@ table.table#contents_list
         td
           = content.reference
         td
-          = if is_nil(LaPotiniere.Masters.content_master) || LaPotiniere.Masters.content_master.id == content.id do
+          = if is_nil(LaPotiniere.Masters.content_master) || LaPotiniere.Masters.content_master.id != content.id do
             span.bg-warning.btn-lg
               = "séléctionné comme page par défaut"
           - else
