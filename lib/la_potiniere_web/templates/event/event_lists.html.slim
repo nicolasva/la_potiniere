@@ -8,6 +8,8 @@
               = for event <- @events do
                 tr
                   td
-                    = event.title
+                    = link event.title, to: "#", class: "link-event"
+                  td
+                    = link "Les détails", to: "#", class: "primary-btn text-uppercase"
 
 
