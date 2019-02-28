@@ -45,7 +45,9 @@ defmodule LaPotiniere.Events do
       ** (Ecto.NoResultsError)
 
   """
-  def get_event!(id), do: Repo.get!(Event, id)
+  def get_event!(id) do
+    Repo.get!(Event, id) |> LaPotiniere.Repo.preload(:menu)
+  end
 
   @doc """
   Creates a Event.

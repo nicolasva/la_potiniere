@@ -22,6 +22,7 @@ defmodule LaPotiniereWeb.Router do
 
     get "/", PageController, :index
     resources "/auth_sessions", AuthSessionController, only: [:new, :create, :delete]
+    resources "/events", EventController, only: [:show]
   end
 
   scope "/admin", LaPotiniereWeb.AdminPotiniereWeb, as: :admin  do

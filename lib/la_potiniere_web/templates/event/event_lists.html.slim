@@ -8,8 +8,8 @@
               = for event <- @events do
                 tr
                   td
-                    = link event.title, to: "#", class: "link-event"
+                    = link event.title, to: Routes.event_path(@conn, :show, event), class: "link-event"
                   td
-                    = link "Les détails", to: "#", class: "primary-btn text-uppercase"
+                    = link "Les détails", to: Routes.event_path(@conn, :show, event), class: "primary-btn text-uppercase"
 
 

@@ -1,7 +1,7 @@
 = if @menu.picture? == 1 do
-  = render(LaPotiniereWeb.PhotoView, "photo_lists.html", photos: @menu.photos)
+  = render(LaPotiniereWeb.PhotoView, "photo_lists.html", conn: @conn, photos: @menu.photos)
 = if @menu.picture? == 0 do
-  = render(LaPotiniereWeb.ContentView, "content_lists.html", contents: @menu.contents)
+  = render(LaPotiniereWeb.ContentView, "content_lists.html", conn: @conn, contents: @menu.contents)
 = if @menu.picture? == 2 do
-  = render(LaPotiniereWeb.EventView, "event_lists.html", events: @menu.events)
+  = render(LaPotiniereWeb.EventView, "event_lists.html", conn: @conn, events: @menu.events)
 
