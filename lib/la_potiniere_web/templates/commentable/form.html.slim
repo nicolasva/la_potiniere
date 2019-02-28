@@ -1,0 +1,18 @@
+= form_for @changeset, @action, fn f ->
+  = if @changeset.action do
+    .alert.alert-danger
+      p Oops, something went wrong! Please check the errors below.
+  .form-group
+    = label f, :title, class: "control-label"
+    = text_input f, :title, placeholder: "Title", class: "form-control"
+    = error_tag f, :title
+  .form-group.comment
+    = label f, :comment_text, class: "control-label"
+    = textarea f, :comment_text, placeholder: "Commentaire", class: "form-control", id: "ckeditor_text"
+    = error_tag f, :comment_text
+  .form-group
+    = label f, :rating_director, class: "control-label"
+    = text_input f, :rating_director, placeholder: "O", class: "form-control"
+    = error_tag f, :rating_director
+  .form-group
+    = submit "Valider", class: "btn btn-primary"

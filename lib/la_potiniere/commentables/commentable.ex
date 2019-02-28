@@ -1,8 +1,8 @@
-defmodule LaPotiniere.Comments.Comment do
+defmodule LaPotiniere.Commentables.Commentable do
   use Ecto.Schema
   import Ecto.Changeset
 
-  schema "comments" do
+  schema "commentables" do
     field :title, :string
     field :comment_text, :string
     field :rating_director, :integer
@@ -16,9 +16,9 @@ defmodule LaPotiniere.Comments.Comment do
   end
 
   @doc false
-  def changeset(comment, attrs) do
-    comment
+  def changeset(commentable, attrs) do
+    commentable
     |> cast(attrs, [:title, :comment_text, :rating_director])
-    |> validate_required([:title, :comment, :rating_director])
+    |> validate_required([:title, :comment_text, :rating_director])
   end
 end

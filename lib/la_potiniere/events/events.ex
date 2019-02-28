@@ -46,7 +46,7 @@ defmodule LaPotiniere.Events do
 
   """
   def get_event!(id) do
-    Repo.get!(Event, id) |> LaPotiniere.Repo.preload(:menu)
+    LaPotiniere.Repo.get!(LaPotiniere.Events.Event, id) |> LaPotiniere.Repo.preload(:menu)
   end
 
   @doc """

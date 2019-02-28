@@ -7,6 +7,7 @@ defmodule LaPotiniere.Events.Event do
     field :comment, :string
     field :position, :integer
     belongs_to :menu, LaPotiniere.Menus.Menu
+    has_many :commentables, LaPotiniere.Commentables.Commentable
     has_one :master, LaPotiniere.Masters.Master, on_delete: :delete_all
     timestamps()
   end
