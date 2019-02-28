@@ -12,7 +12,7 @@ defmodule LaPotiniere.Commentables.Commentable do
     field :rating_4, :integer, virtual: true
     field :rating_5, :integer, virtual: true
     belongs_to :event, LaPotiniere.Events.Event
-    has_many :masters, {"contents_events", Master}, foreign_key: :assoc_id
+    timestamps()
   end
 
   @doc false

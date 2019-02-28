@@ -1,0 +1,9 @@
+h3
+  Liste des commentaires
+ul.list-unstyled
+  = for commentable <- @commentables do
+    li
+      h5
+        = commentable.title
+      div
+        = commentable.comment_text
