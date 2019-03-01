@@ -1,12 +1,1 @@
-.breakfast-area.section_gap_top
-  .container
-    .row.align-items-center.justify-content-center
-      .col-lg-5
-        .left-content
-          h2
-            = @event.title
-          p
-            = @event.comment
-          = render(LaPotiniereWeb.CommentableView, "comments_list.html", commentables: @event.commentables)
-          = render(LaPotiniereWeb.CommentableView, "form.html", changeset: @changeset, action: Routes.event_commentable_path(@conn, :create, @event))
-
+= render("show_event.html", event: @event, changeset: @changeset, conn: @conn)
