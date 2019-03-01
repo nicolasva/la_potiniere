@@ -23,7 +23,7 @@ defmodule LaPotiniereWeb.Router do
     get "/", PageController, :index
     resources "/auth_sessions", AuthSessionController, only: [:new, :create, :delete]
     resources "/events", EventController, only: [:show, :index] do
-      resources "/commentables", CommentableController, only: [:new, :create]
+      resources "/commentables", CommentableController, only: [:index ,:new, :create]
     end
   end
 
