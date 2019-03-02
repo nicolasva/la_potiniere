@@ -1,9 +1,10 @@
-h3
-  Liste des commentaires
-ul.list-unstyled
-  = for commentable <- @commentables do
-    li
-      h5
-        = commentable.title
-      div
-        = commentable.comment_text
+.card
+  h3.card-header
+    Liste des commentaires
+  ul.list-group.list-group-flush
+    = for commentable <- @commentables do
+      li.list-group-item
+        h5
+          = commentable.title
+        div
+          = commentable.comment_text

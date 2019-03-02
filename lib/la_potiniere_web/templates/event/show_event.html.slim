@@ -7,6 +7,13 @@
             = @event.title
           p
             = @event.comment
+          br
           = render(LaPotiniereWeb.CommentableView, "comments_list.html", commentables: @event.commentables)
-          = render(LaPotiniereWeb.CommentableView, "form.html", changeset: @changeset, action: Routes.event_commentable_path(@conn, :create, @event))
+          br
+          br
+          .card.text-center
+            .card-header
+              h3 Laisser un commentaire
+            .card-body
+              = render(LaPotiniereWeb.CommentableView, "form.html", changeset: @changeset, action: Routes.event_commentable_path(@conn, :create, @event))
 
