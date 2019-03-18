@@ -4,8 +4,6 @@ defmodule LaPotiniereWeb.PageController do
   alias LaPotiniere.Masters
   alias LaPotiniere.Masters.Master
   def index(conn, _params) do
-    menu = Masters.menu_master |> LaPotiniere.Repo.preload([:contents, :photos, :events])
-
-    render(conn, "index.html", menu: menu)
+    render(conn, "index.html")
   end
 end

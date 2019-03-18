@@ -54,9 +54,9 @@ html lang="en"
             .row.d-flex.align-items-center
               .col-lg-8.col-md-12
                 h1
-                  = @menu.title
+                  = LaPotiniere.Masters.get_menu.title
                 p
-                  = @menu.preview_comment
+                  = LaPotiniere.Masters.get_menu.preview_comment
       = render @view_module, @view_template, assigns
       footer class="footer-area overlay"
         .container

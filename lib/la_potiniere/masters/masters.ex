@@ -51,6 +51,10 @@ defmodule LaPotiniere.Masters do
     result
   end
 
+  def get_menu do
+    menu_master |> LaPotiniere.Repo.preload([:contents, :photos, :events])
+  end
+
   defp delete_all do
     LaPotiniere.Masters.Master |> LaPotiniere.Repo.delete_all()
   end
