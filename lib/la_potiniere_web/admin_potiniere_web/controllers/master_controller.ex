@@ -23,7 +23,7 @@ defmodule LaPotiniereWeb.AdminPotiniereWeb.MasterController do
       changeset = Photos.get_photo!(_params["photo_id"])
     end
 
-    Masters.create_master(changeset)
+    #Masters.create_master(changeset)
     if _params["content_id"] do
       redirect(conn, to: Routes.admin_menu_content_path(conn, :index, _params["menu_id"]))
     end

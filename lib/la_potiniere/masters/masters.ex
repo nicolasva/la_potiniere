@@ -22,10 +22,10 @@ defmodule LaPotiniere.Masters do
 
   def create_master(parent) do
     delete_all()
-    changeset = 
-      parent
-      |>Ecto.build_assoc(:master)
-      |> Repo.insert()
+    #changeset = 
+    parent
+    |>Ecto.build_assoc(:master)
+    |> Repo.insert()
   end
 
   def content_master do
@@ -45,10 +45,10 @@ defmodule LaPotiniere.Masters do
 
   def menu_master do
     master = get_master! |> Repo.preload([[content: :menu], [photo: :menu], [event: :menu]])
-    if master.content, do: result = master.content.menu
-    if master.event, do: result = master.event.menu
-    if master.photo, do: result = master.photo.menu
-    result
+    if master.content, do: master.content.menu
+    if master.event, do: master.event.menu
+    if master.photo, do: master.photo.menu
+    #result
   end
 
   def get_menu do
