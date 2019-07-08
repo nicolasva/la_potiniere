@@ -12,7 +12,7 @@ defmodule LaPotiniereWeb.CommentableController do
   end
 
   def new(conn, %{"event_id" => event_id}) do
-    IO.inspect "nicolas"
+    #IO.inspect "nicolas"
     event = Events.get_event!(event_id) 
     changeset = Commentables.change_commentable(%Commentable{}, event.id)
     render(conn, "new.html", menu: event.menu, changeset: changeset, event: event)
