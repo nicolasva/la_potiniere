@@ -27,12 +27,12 @@ html lang="en"
         .navbar
           ul.navbar-nav
             li.nav-item
-              a.nav-link.active href="#"
+              a.nav-link href="#"
                 = img_tag("/images/front/header/nav-icon1.png")
                 = "home"
             = for menu <- LaPotiniere.Menus.list_menus() do
               li.nav-item
-                = link menu.title, to: "#", class: "nav-link active"
+                = link menu.title, to: "#", class: "nav-link"
 
     main.site-main role="main"
       p.alert.alert-info role="alert"
