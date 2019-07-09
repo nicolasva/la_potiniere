@@ -45,10 +45,14 @@ defmodule LaPotiniere.Masters do
 
   def menu_master do
     master = get_master! |> Repo.preload([[content: :menu], [photo: :menu], [event: :menu]])
-    if master.content, do: master.content.menu
-    if master.event, do: master.event.menu
-    if master.photo, do: master.photo.menu
-    #result
+    cond do
+      master.event ->
+        master.event.menu
+      master.content ->
+        master.content.menu
+      master.photo ->
+        master.photo.menu
+    end
   end
 
   def get_menu do
