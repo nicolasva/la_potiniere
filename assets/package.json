@@ -9,7 +9,7 @@
     "ckeditor": "^4.11.2",
     "bootstrap": "^4.2.1",
     "bootstrap-sass": "^3.4.0",
-    "npm": "^6.5.0",
+    "npm": "^6.13.4",
     "coffee-script-brunch": "^3.0.0",
     "coffeescript": "^2.3.2",
     "phoenix": "file:../deps/phoenix",
